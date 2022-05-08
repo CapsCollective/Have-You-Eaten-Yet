@@ -1,28 +1,46 @@
+using System;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
     [SerializeField] private Transform target;
+
+    public Transform snapTarget;
     
     private bool _isDragging;
     private bool _isGrounded;
 
-    private Vector2 _velocity;
-    private Vector2 _prevMousePos;
+    private Vector2 _startScale;
+
+    public enum DraggableType
+    {
+        MeatBall
+    }
+
+    public DraggableType type;
     
     private Vector2 MousePos => Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    
-    void OnMouseDown()
+
+    private void Awake()
+    {
+        _startScale = transform.localScale;
+    }
+
+    public void OnMouseDown()
     {
         _isDragging = true;
-        _prevMousePos = MousePos;
-        target.localScale = Vector3.one * 1.2f;
+        transform.localScale = _startScale * 1.2f;
     }
 
     void OnMouseUp()
     {
         _isDragging = false;
-        target.localScale = Vector3.one;
+        transform.localScale = _startScale;
+
+        if (snapTarget)
+        {
+            target.position = snapTarget.position;
+        } 
     }
 
     // Update is called once per frame
@@ -30,12 +48,11 @@ public class DragAndDrop : MonoBehaviour
     {
         if (_isDragging)
         {
-            /*
-            Vector3 diff = MousePos - _prevMousePos;
-            _prevMousePos = MousePos;
-            transform.position += diff;
-            */
-            transform.position = MousePos;
+            target.position = MousePos;
+        }
+        else if (!snapTarget && Vector3.Distance(target.position, transform.position) > 0.5f)
+        {
+            target.position = Vector3.Lerp(target.position, transform.position, Time.deltaTime * 10);
         }
     }
 }
