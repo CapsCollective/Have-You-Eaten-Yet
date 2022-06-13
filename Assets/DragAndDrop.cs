@@ -5,7 +5,7 @@ public class DragAndDrop : MonoBehaviour
 {
     [SerializeField] private Transform target;
 
-    public Transform snapTarget;
+    [HideInInspector] public Transform snapTarget;
     
     private bool _isDragging;
     private bool _isGrounded;
@@ -14,7 +14,8 @@ public class DragAndDrop : MonoBehaviour
 
     public enum DraggableType
     {
-        MeatBall
+        MeatBall,
+        Dumpling
     }
 
     public DraggableType type;
@@ -26,17 +27,13 @@ public class DragAndDrop : MonoBehaviour
         _startScale = transform.localScale;
     }
 
-    public void OnMouseDown()
-    {
-        _isDragging = true;
-        transform.localScale = _startScale * 1.2f;
-    }
-
     void OnMouseUp()
     {
+        if (!enabled) return;
+        
         _isDragging = false;
         transform.localScale = _startScale;
-
+        
         if (snapTarget)
         {
             target.position = snapTarget.position;
@@ -46,6 +43,25 @@ public class DragAndDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!enabled) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            _isDragging = true;
+            transform.localScale = _startScale * 1.2f;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _isDragging = false;
+            transform.localScale = _startScale;
+        
+            if (snapTarget)
+            {
+                target.position = snapTarget.position;
+            } 
+        }
+        
         if (_isDragging)
         {
             target.position = MousePos;

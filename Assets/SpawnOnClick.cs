@@ -8,7 +8,7 @@ public class SpawnOnClick : MonoBehaviour
     
     void OnMouseDown()
     {
-        GameObject instance = Instantiate(item, transform.position, Quaternion.identity);
+        GameObject instance = Instantiate(item, transform.position, item.transform.rotation);
         //instance.GetComponent<DragAndDrop>()?.OnMouseDown(); // Init click if draggable component
     }
 }
