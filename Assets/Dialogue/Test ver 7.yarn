@@ -1,0 +1,36 @@
+title: Start
+tags: 
+colorID: 0
+position: 424,225
+---
+Person1: This is the text
+
+Person2: your choice is
+-> one
+    three
+    <<jump Continue>>
+-> two
+    four
+    <<jump Other>>
+Person1: either way this should then appear
+Person2: and then this
+===
+title: Continue
+tags: 
+colorID: 0
+position: 695,310
+---
+You should land here
+
+and then the dialogue goes on from that
+
+<<stop>>
+===
+title: Other
+tags: 
+colorID: 0
+position: 577,554
+---
+and other text goes here 
+wjnrpingwz
+===
