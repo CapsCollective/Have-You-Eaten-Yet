@@ -1,3 +1,4 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ public class Wrapper : MonoBehaviour
     private bool _leftFolded;
     private bool _rightFolded;
 
+    [SerializeField] private int center;
+    private Vector2 StartPos = new Vector2(-10, 55);
 
     private void Start()
     {
@@ -22,7 +25,15 @@ public class Wrapper : MonoBehaviour
         _dropTarget = GetComponent<DropTarget>();
         _dragAndDrop = GetComponent<DragAndDrop>();
         _dragAndDrop.enabled = false;
+    }
 
+    [Button]
+    private void Throw()
+    {
+        transform.position = StartPos;
+        transform.DOMove(new Vector3(center + Random.Range(-3,3), Random.Range(-25, -15), 0), 1f);
+        transform.eulerAngles = new Vector3(0, 0, 180);
+        transform.DORotate(new Vector3(0, 0, 360), 1f);
     }
 
     [Button]
@@ -33,6 +44,7 @@ public class Wrapper : MonoBehaviour
         _dropTarget.enabled = false;
         _animator.Play("Fold Down");
         _folded = true;
+        GetComponent<Collider2D>().isTrigger = false;
     }
     
     [Button]

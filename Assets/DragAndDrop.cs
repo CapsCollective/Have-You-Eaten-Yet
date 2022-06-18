@@ -6,7 +6,8 @@ public class DragAndDrop : MonoBehaviour
     [SerializeField] private Transform target;
 
     [HideInInspector] public Transform snapTarget;
-    
+
+    private Collider2D _collider;
     private bool _isDragging;
     private bool _isGrounded;
 
@@ -25,21 +26,15 @@ public class DragAndDrop : MonoBehaviour
     private void Awake()
     {
         _startScale = transform.localScale;
+        _collider = GetComponent<Collider2D>();
     }
 
-    void OnMouseUp()
+    public void Select()
     {
-        if (!enabled) return;
-        
-        _isDragging = false;
-        transform.localScale = _startScale;
-        
-        if (snapTarget)
-        {
-            target.position = snapTarget.position;
-        } 
+        _isDragging = true;
+        transform.localScale = _startScale * 1.2f;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -47,11 +42,15 @@ public class DragAndDrop : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            _isDragging = true;
-            transform.localScale = _startScale * 1.2f;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (_collider.OverlapPoint(mousePosition))
+            {
+                _isDragging = true;
+                transform.localScale = _startScale * 1.2f;
+            }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && _isDragging)
         {
             _isDragging = false;
             transform.localScale = _startScale;
