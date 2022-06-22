@@ -30,10 +30,11 @@ public class Wrapper : MonoBehaviour
     [Button]
     private void Throw()
     {
-        transform.position = StartPos;
-        transform.DOMove(new Vector3(center + Random.Range(-3,3), Random.Range(-25, -15), 0), 1f);
-        transform.eulerAngles = new Vector3(0, 0, 180);
-        transform.DORotate(new Vector3(0, 0, 360), 1f);
+        Transform t = transform;
+        t.position = StartPos;
+        t.DOMove(new Vector3(center + Random.Range(-3,3), Random.Range(-25, -15), 0), 1f);
+        t.eulerAngles = new Vector3(0, 0, 180);
+        t.DORotate(new Vector3(0, 0, 360), 1f);
     }
 
     [Button]
