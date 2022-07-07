@@ -42,6 +42,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Kitchen Background
+    uniqueID: 1298141271
+    locked: 0
+  - name: Background
+    uniqueID: 1076749819
+    locked: 0
+  - name: Back Chairs
+    uniqueID: 2391717883
+    locked: 0
+  - name: Characters Sitting Front
+    uniqueID: 1632684539
+    locked: 0
+  - name: Tables
+    uniqueID: 236344713
+    locked: 0
+  - name: Characters Sitting Back
+    uniqueID: 824319581
+    locked: 0
+  - name: Front Chairs
+    uniqueID: 885401479
+    locked: 0
   - name: UI
     uniqueID: 4183144397
     locked: 0

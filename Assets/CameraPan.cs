@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 public class CameraPan : MonoBehaviour
 {
     [SerializeField] private float leftBound, rightBound, screenPercentage, speed;
-    [SerializeField] private Transform leftArrow, rightArrow;
+    [SerializeField] private Transform leftArrow, rightArrow, kitchenBackground;
 
     private const float HoverScale = 1.1f;
     
@@ -37,6 +36,9 @@ public class CameraPan : MonoBehaviour
         {
             rightArrow.localScale = Vector3.one;
         }
+
+        kitchenBackground.position = new Vector3((transform.position.x / 10) - 4, 0, 0);
+        
         leftArrow.gameObject.SetActive(xPos > leftBound + 0.5f);
         rightArrow.gameObject.SetActive(xPos < rightBound - 0.5f);
     }
