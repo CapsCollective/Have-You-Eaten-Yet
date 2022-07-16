@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
-using TMPro;
 
 [Serializable]
 public class DialogueSettings
@@ -17,31 +15,34 @@ public class RestaurantDialogueView : DialogueViewBase
 {
     public static Action OnNewRestaurantDialogue;
 
-    [SerializeField] private Utilities.SerializedDictionary<string, DialogueSettings> _spawnPositions = new Utilities.SerializedDictionary<string, DialogueSettings>();
-    [SerializeField] private GameObject _dialogueBox;
-    [SerializeField] private float _timeToAdvance = 5.0f;
+    [SerializeField] private Utilities.SerializedDictionary<string, DialogueSettings> spawnPositions = new Utilities.SerializedDictionary<string, DialogueSettings>();
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private Transform dialogueParent;
+    [SerializeField] private float timeToAdvance = 5.0f;
 
-    private Coroutine currentAnimation;
+    private Coroutine _currentAnimation;
 
     public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
     {
-        if(currentAnimation != null)
+        if(_currentAnimation != null)
         {
-            StopCoroutine(currentAnimation);
-            currentAnimation = null;
+            StopCoroutine(_currentAnimation);
+            _currentAnimation = null;
         }
 
-        currentAnimation = this.Tween(
-            0.0f, 1.0f, _timeToAdvance, (from, to, t) => Mathf.Lerp(from, to, t),
+        _currentAnimation = this.Tween(
+            0.0f, 1.0f, timeToAdvance, (from, to, t) => Mathf.Lerp(from, to, t),
             () =>
             {
                 OnNewRestaurantDialogue?.Invoke();
-                DialogueSettings dialogueSettings = _spawnPositions[dialogueLine.CharacterName];
-                DialogueText newText = Instantiate(_dialogueBox, dialogueSettings.Position, Quaternion.identity).GetComponent<DialogueText>();
-                newText.SetText(dialogueLine.TextWithoutCharacterName.Text);
-                newText.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
+                DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
+                Transform box = Instantiate(dialogueBox, dialogueSettings.Position, Quaternion.identity).transform;
+                box.SetParent(dialogueParent);
+                DialogueText dialogue = box.GetComponent<DialogueText>();
+                dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
+                dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
 
-                currentAnimation = null;
+                _currentAnimation = null;
                 Debug.Log($"{dialogueLine.CharacterName} is speaking: {dialogueLine.TextWithoutCharacterName.Text}");
                 onDialogueLineFinished();
             });
@@ -49,7 +50,7 @@ public class RestaurantDialogueView : DialogueViewBase
 
     private void OnDrawGizmosSelected()
     {
-        foreach (KeyValuePair<string, DialogueSettings> kvp in _spawnPositions) {
+        foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions) {
             Gizmos.DrawSphere(new Vector3(kvp.Value.Position.x, kvp.Value.Position.y), 1f);
         }
     }

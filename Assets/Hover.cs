@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,14 +10,14 @@ public class Hover : MonoBehaviour
     
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         centerPos = transform.position;
-        randomOffset = Random.Range(0, 2 * Mathf.PI);
+        randomOffset = Random.Range(0, Mathf.PI/2);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 		transform.position = centerPos + new Vector3(0, Mathf.Sin(randomOffset + Time.time * speed) * amplitude, 0);
     }
