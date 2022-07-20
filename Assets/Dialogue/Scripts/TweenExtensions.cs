@@ -38,6 +38,11 @@ public static class TweenExtensions
         return behaviour.StartCoroutine(HandleTween(from, to, time, handler, onComplete));
     }
 
+    public static Coroutine RunText(this MonoBehaviour behaviour, string text, float timePerCharacter, float timeToWait, System.Action<int> onNewChar = null, System.Action onComplete = null)
+    {
+        return behaviour.StartCoroutine(HandleDialogue(text, timePerCharacter, timeToWait, onNewChar, onComplete));
+    }
+
     // The coroutine that actually performs the work of animating the change.
     private static IEnumerator HandleTween<T>(T from, T to, float time, TweenFunction<T> handler, System.Action onComplete)
     {
@@ -78,6 +83,18 @@ public static class TweenExtensions
         handler(from, to, 1f);
 
         // Finally, if we had an on-complete method to call, call it now.
+        onComplete?.Invoke();
+    }
+
+    private static IEnumerator HandleDialogue(string text, float timePerCharacter, float timeToWait, System.Action<int> onNewChar, System.Action onComplete)
+    {
+        for (int i = 0; i < text.Length + 1; i++)
+        {
+            onNewChar?.Invoke(i);
+            yield return new WaitForSeconds(timePerCharacter);
+        }
+
+        yield return new WaitForSeconds(timeToWait);
         onComplete?.Invoke();
     }
 }

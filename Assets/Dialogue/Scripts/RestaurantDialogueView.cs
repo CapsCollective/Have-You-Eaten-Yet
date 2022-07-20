@@ -20,7 +20,8 @@ public class RestaurantDialogueView : DialogueViewBase
     [SerializeField] private Utilities.SerializedDictionary<string, DialogueSettings> spawnPositions = new Utilities.SerializedDictionary<string, DialogueSettings>();
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private Transform dialogueParent;
-    [SerializeField] private float timeToAdvance = 5.0f;
+    [SerializeField] private float timeToWait = 3.0f;
+    [SerializeField] private float timePerCharacter = 0.15f;
     [SerializeField] private float timeToFade = 5.0f;
 
     private Coroutine _currentAnimation;
@@ -33,23 +34,24 @@ public class RestaurantDialogueView : DialogueViewBase
             _currentAnimation = null;
         }
 
-        _currentAnimation = this.Tween(
-            0.0f, 1.0f, timeToAdvance, (from, to, t) => Mathf.Lerp(from, to, t),
-            () =>
-            {
-                OnNewRestaurantDialogue?.Invoke();
-                DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
-                Transform box = Instantiate(dialogueBox, Vector3.zero, Quaternion.identity).transform;
-                DialogueText dialogue = box.GetComponent<DialogueText>();
-                dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
-                dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
-                box.SetParent(dialogueSettings.Character.transform);
-                box.localPosition = dialogueSettings.Position;
+        OnNewRestaurantDialogue?.Invoke();
+        DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
+        Transform box = Instantiate(dialogueBox, Vector3.zero, Quaternion.identity).transform;
+        DialogueText dialogue = box.GetComponent<DialogueText>();
+        dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
+        dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
+        box.SetParent(dialogueSettings.Character.transform);
+        box.localPosition = dialogueSettings.Position;
 
-                _currentAnimation = null;
-                Debug.Log($"{dialogueLine.CharacterName} is speaking: {dialogueLine.TextWithoutCharacterName.Text}");
-                onDialogueLineFinished();
-            });
+        _currentAnimation = null;
+        Debug.Log($"{dialogueLine.CharacterName} is speaking: {dialogueLine.TextWithoutCharacterName.Text}");
+
+
+        _currentAnimation = this.RunText(dialogueLine.TextWithoutCharacterName.Text, timePerCharacter, timeToWait, (i) =>
+        {
+            dialogue.RevealText(i);
+        },
+        () => onDialogueLineFinished());
     }
 
     public override void DialogueComplete()

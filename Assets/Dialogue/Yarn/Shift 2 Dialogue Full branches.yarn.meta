@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 2374fc8eeeb31a04b9dae63654683f89
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  LastImportHadImplicitStringIDs: 0
+  LastImportHadAnyStrings: 0
+  isSuccessfullyParsed: 0
+  parseErrorMessages:
+  - "Assets/Dialogue/Yarn/Shift 2 Dialogue Full branches.yarn: 18:20: Error: Unexpected
+    \"1\" while reading a jump statement\r\n    <<jump Dialogue 1>> \r\r\n                   
+    ^\r\n"
+  - "Assets/Dialogue/Yarn/Shift 2 Dialogue Full branches.yarn: 21:20: Error: Unexpected
+    \"2\" while reading a jump statement\r\n    <<jump Dialogue 2>>\r\n                   
+    ^\r\n"
+  - "Assets/Dialogue/Yarn/Shift 2 Dialogue Full branches.yarn: 49:20: Error: Unexpected
+    \"3\" while reading a jump statement\r\n    <<jump Dialogue 3>>\r\n                   
+    ^\r\n"
+  - "Assets/Dialogue/Yarn/Shift 2 Dialogue Full branches.yarn: 52:20: Error: Unexpected
+    \"2\" while reading a jump statement\r\n    <<jump Dialogue 2>>\r\n                   
+    ^\r\n"

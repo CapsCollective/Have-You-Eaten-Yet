@@ -15,12 +15,12 @@ A: I’m going to roll the dough as fast as I can. Try to keep up.
 A: How are you managing? 
 -> I’m doing okay! 
     A: That’s good! 
-    <<jump Dialogue 1>> 
+    <<jump Dialogue_1>> 
 -> It’s pretty hard. 
     A: That’s okay. Focus on the work. 
-    <<jump Dialogue 2>>
+    <<jump Dialogue_2>>
 ===
-title: Dialogue 1
+title: Dialogue_1
 tags: 
 colorID: 0
 position: -317,-707
@@ -46,12 +46,12 @@ A: It’s good to see you’re getting the rhythm of it.
 A: How are you going? Are you keeping up? 
 -> Yeah.
     A: Good to hear. Not much longer to go.
-    <<jump Dialogue 3>>
+    <<jump Dialogue_3>>
 ->Actually…
     A: You’re doing fine. Focus on the work.
-    <<jump Dialogue 2>>
+    <<jump Dialogue_2>>
 ===
-title: Dialogue 2
+title: Dialogue_2
 tags: 
 colorID: 0
 position: -463,-452
@@ -105,7 +105,7 @@ A: Do you know what I mean?
     B: I'm the same. I'd rather have less to do than more. 
 A: Okay that’s enough. The orders are wrapping up. Great work today!
 ===
-title: Dialogue 3
+title: Dialogue_3
 tags: 
 colorID: 0
 position: -188,-474

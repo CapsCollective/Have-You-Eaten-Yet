@@ -21,7 +21,6 @@ public class DialogueText : MonoBehaviour
 
     private void Start()
     {
-        //sine = Random.value;
     }
 
     private void OnNewRestaurantDialogue()
@@ -52,5 +51,10 @@ public class DialogueText : MonoBehaviour
     {
         if(_startFloat)
             sine += Time.deltaTime * sineFrequency;
+    }
+
+    public void RevealText(int pos)
+    {
+        textMeshPro.maxVisibleCharacters = pos;
     }
 }
