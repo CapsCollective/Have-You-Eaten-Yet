@@ -1,23 +1,40 @@
 using TMPro;
+using DG.Tweening;
 using UnityEngine;
 
 public class DialogueText : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMeshPro;
-    [SerializeField] private float speed = 10;
+    [SerializeField] private float moveTime = 10;
+    [SerializeField] private float fadeTime = 1.5f;
+    [SerializeField] private float sineStrength = 3.0f;
+    [SerializeField] private float sineFrequency = 1.0f;
 
     private bool _startFloat = false;
+    private float sine;
+    private float startX;
 
     private void Awake()
     {
         RestaurantDialogueView.OnNewRestaurantDialogue += OnNewRestaurantDialogue;
     }
 
+    private void Start()
+    {
+        //sine = Random.value;
+    }
+
     private void OnNewRestaurantDialogue()
     {
         if (_startFloat) return;
         _startFloat = true;
-        GetComponent<Hover>().enabled = false;
+
+        startX = transform.localPosition.x;
+        transform.DOMoveY(35, moveTime).SetEase(Ease.InSine).OnUpdate(() =>
+        {
+            transform.localPosition = new Vector3(startX + (Mathf.Sin(sine) * sineStrength), transform.localPosition.y);
+        });
+        GetComponent<CanvasGroup>().DOFade(0, fadeTime);
     }
 
     public void SetSpriteFlip(bool x, bool y)
@@ -34,6 +51,7 @@ public class DialogueText : MonoBehaviour
     public void Update()
     {
         if(_startFloat)
-            transform.Translate(Vector2.up * Time.deltaTime * speed);
+            sine += Time.deltaTime * sineFrequency;
+        //    transform.Translate(Vector2.up * Time.deltaTime * speed);
     }
 }
