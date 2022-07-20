@@ -1,0 +1,20 @@
+title: Start
+tags: 
+colorID: 0
+position: -311,-884
+---
+A: Good, you've made $dumplingsMade dumplings. 
+A: How are you finding it? 
+-> It's easy
+    A: You're lucky it's a quiet night. Wait until you're rostered on when it's busy. 
+-> It's tricky. 
+    A: Don't worry shape or speed for now. 
+A: What you want is for your fingers to remember the motions.
+A: Soon you will be able to fold without thinking! 
+<<wait 1>>
+B: Yeah you're doing well. 
+B: Even if you mess up, just throw it away, don't get flustered. 
+<<wait 3>>
+A: Okay finish up the one you're on.
+A: That's enough for today.
+===

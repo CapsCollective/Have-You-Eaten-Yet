@@ -1,0 +1,45 @@
+title: Restaurant Night 2 Dialogue 1
+tags: 
+colorID: 0
+position: 666,219
+---
+Rob: Ugh. What a day. 
+Rob: Feels like nothing is going right. Do you know what I mean? 
+Sal: Yeah. 
+Rob: I mean the least they could do is apologise.
+Rob: I’m not made of time. I can’t just wait forever. 
+Sal: They’re doing their best. 
+Rob: Well their best is too slow!
+Rob: I bet if I go back there, I could do it twice as fast. 
+Sal: You know how to fold dumplings?
+Rob: How hard could it be? 
+Sal: So no, then. 
+Rob: Oh come on. Don’t pretend it wouldn’t be easy, doing nothing but fold dough all day. 
+Rob: When you go to a restaurant, you pay money for the service.
+Rob: That’s the whole point of why we’re here. 
+Rob: If we’re not getting good service, then what’s the point of even going out?
+Sal: I thought you liked this place? 
+Rob: I did. Their food is good. 
+Sal: Yeah, it was delic-
+Rob: But not worth this much wait. 
+Rob: Don’t you think so? 
+Sal: … 
+Rob: I hope whoever’s working back there is going to get their act together. 
+Rob: For their sake. 
+Sal: … 
+Rob: A place shouldn't survive if it's not efficient. 
+Rob: I mean, if I slacked off to that degree at the office, I'd get-
+Sal: We should go. 
+Rob: Huh? 
+Sal: Before you make more of a scene. We should go. 
+Rob: You can go if you want. 
+Rob: I’m a paying customer. 
+<<wait 1>>
+Rob: I might just stay here all night. 
+<<wait 2>>
+Rob: All night. 
+<<wait 2>>
+Rob: … All night. 
+<<wait 3>>
+Rob: Alright, I should probably get going.
+===

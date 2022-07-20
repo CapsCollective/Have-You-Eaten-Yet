@@ -1,0 +1,23 @@
+title: Restaurant Parents Dialogue
+tags: 
+colorID: 0
+position: -401,-1057
+---
+L: Hey, listen closely. 
+L: You need to study hard, otherwise you will be working in a place like this. 
+G: What’s wrong with working here?
+L: It is a low life. No respect. 
+G: Why? 
+L: I used to work in a restaurant while I was younger. 
+L: It was hard. Late nights every day. Trust me, you don’t want to live like that. 
+G: But did you get to wake up later? 
+L: Yes. I would start at 1. 
+G: That doesn’t sound so bad. 
+L: It was, you just have to trust me. 
+L: And promise to study hard, ok? 
+<<wait 1>>
+G: ...
+G: Ok. 
+L: Good girl. 
+L: Okay, finish up and let’s go. We’ll be late for your lesson.
+===

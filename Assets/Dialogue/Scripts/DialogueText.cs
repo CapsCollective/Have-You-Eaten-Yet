@@ -52,6 +52,5 @@ public class DialogueText : MonoBehaviour
     {
         if(_startFloat)
             sine += Time.deltaTime * sineFrequency;
-        //    transform.Translate(Vector2.up * Time.deltaTime * speed);
     }
 }
