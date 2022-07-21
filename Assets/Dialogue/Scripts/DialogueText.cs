@@ -6,13 +6,15 @@ public class DialogueText : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMeshPro;
     [SerializeField] private float moveTime = 10;
-    [SerializeField] private float fadeTime = 1.5f;
+    [SerializeField] private float fadeInTime = 1.0f;
+    [SerializeField] private float fadeOutTime = 3.0f;
     [SerializeField] private float sineStrength = 3.0f;
     [SerializeField] private float sineFrequency = 1.0f;
 
     private bool _startFloat = false;
     private float sine;
     private float startX;
+    private CanvasGroup canvasGroup;
 
     private void Awake()
     {
@@ -21,6 +23,8 @@ public class DialogueText : MonoBehaviour
 
     private void Start()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.DOFade(1, fadeInTime);
     }
 
     private void OnNewRestaurantDialogue()
@@ -33,7 +37,7 @@ public class DialogueText : MonoBehaviour
         {
             transform.localPosition = new Vector3(startX + (Mathf.Sin(sine) * sineStrength), transform.localPosition.y);
         });
-        GetComponent<CanvasGroup>().DOFade(0, fadeTime);
+        GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic);
     }
 
     public void SetSpriteFlip(bool x, bool y)

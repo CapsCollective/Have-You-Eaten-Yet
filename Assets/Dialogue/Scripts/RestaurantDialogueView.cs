@@ -44,9 +44,6 @@ public class RestaurantDialogueView : DialogueViewBase
         box.localPosition = dialogueSettings.Position;
 
         _currentAnimation = null;
-        Debug.Log($"{dialogueLine.CharacterName} is speaking: {dialogueLine.TextWithoutCharacterName.Text}");
-
-
         _currentAnimation = this.RunText(dialogueLine.TextWithoutCharacterName.Text, timePerCharacter, timeToWait, (i) =>
         {
             dialogue.RevealText(i);

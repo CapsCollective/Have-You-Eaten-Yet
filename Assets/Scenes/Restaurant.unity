@@ -1362,7 +1362,8 @@ MonoBehaviour:
     keyCollision: 0
   dialogueBox: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
   dialogueParent: {fileID: 0}
-  timeToAdvance: 5
+  timeToWait: 3
+  timePerCharacter: 0.05
   timeToFade: 1
 --- !u!4 &1915867456
 Transform:
