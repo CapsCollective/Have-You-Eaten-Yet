@@ -14,13 +14,7 @@ public class DropTarget : MonoBehaviour
         DragAndDrop target = col.gameObject.GetComponent<DragAndDrop>();
         if(!target || !target.isDragging || target.type != acceptType) return;
         dropped = target.gameObject;
-        Debug.Log($"{name} is Adding Target");
-        
-        if (target.snapTarget)
-        {
-            Debug.Log($"{target.snapTarget.name} is Removing Target in override");
-            target.snapTarget.GetComponent<DropTarget>().dropped = null;
-        }
+        if (target.snapTarget) target.snapTarget.GetComponent<DropTarget>().dropped = null;
         target.snapTarget = transform;
     }
     
@@ -28,13 +22,7 @@ public class DropTarget : MonoBehaviour
     {
         if (!enabled) return;
         DragAndDrop target = col.gameObject.GetComponent<DragAndDrop>();
-        if (
-            !target || 
-            !target.isDragging || 
-            dropped != col.gameObject
-        ) return;
-        
-        Debug.Log($"{name} is Removing Target");
+        if (!target || !target.isDragging || dropped != col.gameObject) return;
         dropped = null;
         target.snapTarget = null;
     }
