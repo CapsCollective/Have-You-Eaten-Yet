@@ -7,8 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(DragAndDrop))]
 public class Wrapper : MonoBehaviour
 {
-
     private Animator _animator;
+    private SpriteRenderer _sprite;
     private DropTarget _dropTarget;
     private DragAndDrop _dragAndDrop;
     private bool _folded;
@@ -21,18 +21,18 @@ public class Wrapper : MonoBehaviour
 
     private void Start()
     {
+        _sprite = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _dropTarget = GetComponent<DropTarget>();
         _dragAndDrop = GetComponent<DragAndDrop>();
         _dragAndDrop.enabled = false;
     }
-
-    [Button]
-    private void Throw()
+    
+    public void Throw(Vector3 targetPos)
     {
         Transform t = transform;
         t.position = StartPos;
-        t.DOMove(new Vector3(center + Random.Range(-3,3), Random.Range(-25, -15), 0), 1f);
+        t.DOMove(targetPos, 1f);
         t.eulerAngles = new Vector3(0, 0, 180);
         t.DORotate(new Vector3(0, 0, 360), 1f);
     }
@@ -40,8 +40,8 @@ public class Wrapper : MonoBehaviour
     [Button]
     private void FoldDown()
     {
-        if (!_dropTarget.Dropped) return;
-        Destroy(_dropTarget.Dropped);
+        if (!_dropTarget.dropped) return;
+        Destroy(_dropTarget.dropped);
         _dropTarget.enabled = false;
         _animator.Play("Fold Down");
         _folded = true;
@@ -69,6 +69,7 @@ public class Wrapper : MonoBehaviour
     {
         if (!_rightFolded) return;
         _animator.Play("Fold Left");
+        _sprite.sortingOrder = 2;
         _leftFolded = true;
         _dragAndDrop.enabled = true;
     }

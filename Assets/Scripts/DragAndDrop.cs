@@ -1,25 +1,25 @@
+using System;
+using NaughtyAttributes;
 using UnityEngine;
 
+public enum DraggableType
+{
+    MeatBall,
+    Dumpling
+}
 public class DragAndDrop : MonoBehaviour
 {
+    public static Action<DraggableType> OnPlaced;
+
     [SerializeField] private Transform target;
-
-    [HideInInspector] public Transform snapTarget;
-
-    private Collider2D _collider;
-    private bool _isDragging;
-    private bool _isGrounded;
-
-    private Vector2 _startScale;
-
-    public enum DraggableType
-    {
-        MeatBall,
-        Dumpling
-    }
-
     public DraggableType type;
     
+    [ReadOnly] public Transform snapTarget;
+    [ReadOnly] public bool isDragging;
+    
+    private Collider2D _collider;
+    private Vector2 _startScale;
+
     private Vector2 MousePos => Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     private void Awake()
@@ -30,37 +30,39 @@ public class DragAndDrop : MonoBehaviour
 
     public void Select()
     {
-        _isDragging = true;
+        isDragging = true;
         transform.localScale = _startScale * 1.2f;
     }
     
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!enabled) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !snapTarget)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (_collider.OverlapPoint(mousePosition))
             {
-                _isDragging = true;
+                isDragging = true;
                 transform.localScale = _startScale * 1.2f;
             }
         }
 
-        if (Input.GetMouseButtonUp(0) && _isDragging)
+        if (Input.GetMouseButtonUp(0) && isDragging)
         {
-            _isDragging = false;
+            isDragging = false;
             transform.localScale = _startScale;
         
             if (snapTarget)
             {
+                transform.SetParent(snapTarget);
+                target.SetParent(snapTarget);
                 target.position = snapTarget.position;
-            } 
+                OnPlaced?.Invoke(type);
+            }
         }
         
-        if (_isDragging)
+        if (isDragging)
         {
             target.position = MousePos;
         }
