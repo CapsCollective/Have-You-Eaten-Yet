@@ -13,6 +13,7 @@ public class Wrapper : MonoBehaviour
     private DragAndDrop _dragAndDrop;
     private Collider2D _collider;
     [SerializeField] private Collider2D leftFoldArea, rightFoldArea;
+    [SerializeField] private bool isFaulty;
 
     private bool _folded;
     private bool _tilted;
@@ -35,6 +36,7 @@ public class Wrapper : MonoBehaviour
 
     private void Update()
     {
+        if (isFaulty) return;
         Vector2 mousePosition = MousePos;
         if (Input.GetMouseButtonDown(0))
         {

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7450645524425477136}
   - component: {fileID: 7633318435717380889}
   - component: {fileID: 2850030581039071700}
+  - component: {fileID: 4624213342404850837}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -41,7 +42,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 0}
+  m_SizeDelta: {x: 40, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &4826260393467393198
 MonoBehaviour:
@@ -70,7 +71,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 133823538763775857}
-  speed: 10
+  moveTime: 10
+  fadeInTime: 1
+  fadeOutTime: 3
+  sineStrength: 3
+  sineFrequency: 1
 --- !u!222 &5252833390051979284
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -108,7 +113,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 100
+  m_PixelsPerUnitMultiplier: 2
 --- !u!114 &7633318435717380889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,10 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 2
-    m_Right: 2
-    m_Top: 2
-    m_Bottom: 6
+    m_Left: 3
+    m_Right: 3
+    m_Top: 3
+    m_Bottom: 7
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -149,6 +154,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &4624213342404850837
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826260393467393195}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8099990078665339071
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,10 +200,10 @@ RectTransform:
   m_Father: {fileID: 4757260442684405423}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12, y: -2}
-  m_SizeDelta: {x: 20, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0}
+  m_SizeDelta: {x: 34, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8301881010304982334
 CanvasRenderer:
@@ -195,7 +212,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8099990078665339071}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!114 &133823538763775857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +260,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3
+  m_fontSize: 12
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0

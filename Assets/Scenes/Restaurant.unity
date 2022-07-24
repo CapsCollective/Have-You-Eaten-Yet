@@ -1349,13 +1349,13 @@ MonoBehaviour:
     list:
     - Key: Ray
       Value:
-        Position: {x: 11, y: 8}
+        Position: {x: 20, y: 10}
         FlipX: 1
         FlipY: 0
         Character: {fileID: 2080008854}
     - Key: Donna
       Value:
-        Position: {x: -11, y: 8}
+        Position: {x: -20, y: 10}
         FlipX: 0
         FlipY: 0
         Character: {fileID: 525217871}
