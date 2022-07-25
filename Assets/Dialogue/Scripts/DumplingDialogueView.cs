@@ -8,9 +8,8 @@ public class DumplingDialogueView : DialogueViewBase
 {
     public static Action OnNewRestaurantDialogue;
 
-    [SerializeField] private Utilities.SerializedDictionary<string, DialogueSettings> spawnPositions = new Utilities.SerializedDictionary<string, DialogueSettings>();
+    [SerializeField] private SerializedDictionary<string, DialogueSettings> spawnPositions = new SerializedDictionary<string, DialogueSettings>();
     [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private Transform dialogueParent;
     [SerializeField] private float timeToWait = 3.0f;
     [SerializeField] private float timePerCharacter = 0.15f;
     [SerializeField] private float timeToFade = 5.0f;
@@ -33,7 +32,7 @@ public class DumplingDialogueView : DialogueViewBase
 
         OnNewRestaurantDialogue?.Invoke();
         DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
-        Transform box = Instantiate(dialogueBox, Vector3.zero, Quaternion.identity).transform;
+        Transform box = Instantiate(dialogueBox, transform).transform;
         DialogueText dialogue = box.GetComponent<DialogueText>();
         dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
         dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
@@ -80,7 +79,7 @@ public class DumplingDialogueView : DialogueViewBase
         }
     }
 
-    void OptionWasSelected(int optionNum)
+    private void OptionWasSelected(int optionNum)
     {
         optionButtonCanvasGroup.DOFade(0, timeToHideOptions).OnComplete(() =>
         {

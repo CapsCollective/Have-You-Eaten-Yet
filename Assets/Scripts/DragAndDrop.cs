@@ -5,7 +5,8 @@ using UnityEngine;
 public enum DraggableType
 {
     MeatBall,
-    Dumpling
+    Dumpling,
+    FaultyWrapper
 }
 public class DragAndDrop : MonoBehaviour
 {
