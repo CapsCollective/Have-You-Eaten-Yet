@@ -1,9 +1,13 @@
+using System;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
+    public static Action OnDumplingsSceneLoad;
+    public static Action OnRestaurantSceneLoad;
+
     public SpriteRenderer fade;
     public GameObject dumplings, restaurant, arrows, menu;
 
@@ -26,7 +30,7 @@ public class SceneManager : MonoBehaviour
             arrows.SetActive(false);
             menu.SetActive(false);
             transform.position = Vector3.back;
-            fade.DOFade(0, 1f);
+            fade.DOFade(0, 1f).OnComplete(() => OnDumplingsSceneLoad?.Invoke());
         });
     }
 
@@ -39,7 +43,10 @@ public class SceneManager : MonoBehaviour
             restaurant.SetActive(true);
             arrows.SetActive(true);
             menu.SetActive(false);
-            fade.DOFade(0, 1f).OnComplete(() => _pan.enabled = true);
+            fade.DOFade(0, 1f).OnComplete(() => { 
+                _pan.enabled = true;
+                OnRestaurantSceneLoad?.Invoke();
+            });
         });
     }
 }

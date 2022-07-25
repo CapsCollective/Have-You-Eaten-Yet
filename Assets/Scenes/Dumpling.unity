@@ -731,7 +731,6 @@ MonoBehaviour:
         Character: {fileID: 0}
     keyCollision: 0
   dialogueBox: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
-  dialogueParent: {fileID: 5436431416580845013}
   timeToWait: 3
   timePerCharacter: 0.05
   timeToFade: 5
@@ -917,7 +916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showDebug: 0
-  debugTextView: {fileID: 759180253}
+  debugTextView: {fileID: 0}
 --- !u!114 &6265277535052388310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,7 +934,7 @@ MonoBehaviour:
   dialogueViews:
   - {fileID: 2139646828}
   startNode: Start
-  startAutomatically: 1
+  startAutomatically: 0
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
   verboseLogging: 1

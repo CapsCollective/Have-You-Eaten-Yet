@@ -1172,7 +1172,7 @@ MonoBehaviour:
   dialogueViews:
   - {fileID: 774903763}
   startNode: Start
-  startAutomatically: 1
+  startAutomatically: 0
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
   verboseLogging: 1
@@ -2107,6 +2107,7 @@ GameObject:
   - component: {fileID: 1776612368}
   - component: {fileID: 1776612367}
   - component: {fileID: 1776612366}
+  - component: {fileID: 1776612369}
   m_Layer: 0
   m_Name: Dialogue System
   m_TagString: Untagged
@@ -2127,7 +2128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showDebug: 0
-  debugTextView: {fileID: 1738973486}
+  debugTextView: {fileID: 0}
 --- !u!114 &1776612367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,7 +2146,7 @@ MonoBehaviour:
   dialogueViews:
   - {fileID: 1048551736}
   startNode: Start
-  startAutomatically: 1
+  startAutomatically: 0
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
   verboseLogging: 1
@@ -2177,6 +2178,19 @@ Transform:
   m_Father: {fileID: 480458836}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776612369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776612365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137e97bb2de252a41a69d163ccc043d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Runner: {fileID: 1776612367}
 --- !u!1 &1827590930
 GameObject:
   m_ObjectHideFlags: 0
