@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using DG.Tweening;
+using TMPro;
 
 [Serializable]
 public class DialogueSettings
@@ -11,6 +12,7 @@ public class DialogueSettings
     public bool FlipX;
     public bool FlipY;
     public GameObject Character;
+    public TMP_FontAsset Font;
 }
 
 public class RestaurantDialogueView : DialogueViewBase
@@ -37,17 +39,20 @@ public class RestaurantDialogueView : DialogueViewBase
         DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
         Transform box = Instantiate(dialogueBox, transform).transform;
         DialogueText dialogue = box.GetComponent<DialogueText>();
+        dialogue.SetFont(dialogueSettings.Font);
         dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
         dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
         box.SetParent(dialogueSettings.Character.transform);
         box.localPosition = dialogueSettings.Position;
 
         _currentAnimation = null;
-        _currentAnimation = this.RunText(dialogueLine.TextWithoutCharacterName.Text, timePerCharacter, timeToWait, (i) =>
-        {
-            dialogue.RevealText(i);
-        },
-        () => onDialogueLineFinished());
+        _currentAnimation = this.RunText(
+            dialogueLine.TextWithoutCharacterName.Text,
+            timePerCharacter,
+            timeToWait,
+            i =>  dialogue.RevealText(i),
+            onDialogueLineFinished
+        );
     }
 
     public override void DialogueComplete()

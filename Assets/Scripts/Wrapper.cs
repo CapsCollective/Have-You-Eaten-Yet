@@ -1,4 +1,3 @@
-using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -55,14 +54,6 @@ public class Wrapper : MonoBehaviour
         if (!_folded && mousePosition.y < startY - 6) FoldDown();
         if (_folded && !_tilted && mousePosition.y > startY + 6) TiltUp();
     }
-    
-    public void Throw(Vector3 targetPos)
-    {
-        Transform t = transform;
-        t.DOMove(targetPos, 1f);
-        t.eulerAngles = new Vector3(0, 0, 180);
-        t.DORotate(new Vector3(0, 0, 360), 1f);
-    }
 
     private void FoldDown()
     {
@@ -72,6 +63,7 @@ public class Wrapper : MonoBehaviour
         _animator.Play("Fold Down");
         _folded = true;
         GetComponent<Collider2D>().isTrigger = false;
+        _sprite.sortingOrder = 2;
     }
     
     private void TiltUp()
@@ -83,17 +75,17 @@ public class Wrapper : MonoBehaviour
     
     private void FoldRight()
     {
-        if (!_tilted) return;
+        if (!_tilted || _rightFolded) return;
         _rightFolded = true;
-        _animator.Play("Fold Right");
+        _animator.Play(_leftFolded ? "Close Right" : "Fold Right");
+        if (_leftFolded) _dragAndDrop.enabled = true;
     }
     
     private void FoldLeft()
     {
-        if (!_rightFolded) return;
-        _animator.Play("Fold Left");
-        _sprite.sortingOrder = 2;
+        if (!_tilted || _leftFolded) return;
+        _animator.Play(_rightFolded ? "Close Left" : "Fold Left");
         _leftFolded = true;
-        _dragAndDrop.enabled = true;
+        if (_rightFolded) _dragAndDrop.enabled = true;
     }
 }

@@ -56,6 +56,11 @@ public class DialogueText : MonoBehaviour
         text.text = t;
     }
 
+    public void SetFont(TMP_FontAsset font)
+    {
+        text.font = font;
+    }
+
     public void Update()
     {
         if(_startFloat)

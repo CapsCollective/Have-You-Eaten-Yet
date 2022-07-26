@@ -20,7 +20,7 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
-    void ToDumplings()
+    public void ToDumplings()
     {
         fade.DOFade(1, 1f).OnComplete(() =>
         {
@@ -35,7 +35,7 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
-    void ToRestaurant()
+    public void ToRestaurant()
     {
         fade.DOFade(1, 1f).OnComplete(() =>
         {
