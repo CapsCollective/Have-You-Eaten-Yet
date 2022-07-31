@@ -8,7 +8,7 @@ public class SceneManager : MonoBehaviour
 {
     public static Action<int> OnDumplingsSceneLoad;
     public static Action<int> OnRestaurantSceneLoad;
-    public static int Night = 2; 
+    public static int Night = 1; 
     
     public SpriteRenderer fade;
     public GameObject dumplings, restaurant, arrows, menu;
@@ -24,7 +24,7 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
-    public void ToDumplings()
+    public void ToDumplings(int night)
     {
         //Night = night;
         fade.DOFade(1, 1f).OnComplete(() =>
@@ -40,7 +40,7 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
-    public void ToRestaurant()
+    public void ToRestaurant(int night)
     {
         // Disable all restaurant scenes before setting the new one up
         foreach(GameObject g in _restaurantNights)
@@ -48,7 +48,7 @@ public class SceneManager : MonoBehaviour
             g.SetActive(false);
         }
 
-        //Night = night;
+        Night = night;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             dumplings.SetActive(false);
