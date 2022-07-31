@@ -1,23 +1,44 @@
-title: Night_2_Table_Conversation_2
+title: Night_2_Table_Conversation
 tags: 
 colorID: 0
-position: -1031,-1715
+position: -930,-1454
 ---
-L: Hey, listen closely. 
-L: You need to study hard, otherwise you will be working in a place like this. 
-G: What’s wrong with working here?
-L: It is a low life. No respect. 
-G: Why? 
-L: I used to work in a restaurant while I was younger. 
-L: It was hard. Late nights every day. Trust me, you don’t want to live like that. 
-G: But did you get to wake up later? 
-L: Yes. I would start in the afternoon.
-G: That doesn’t sound so bad. 
-L: It was, you just have to trust me. 
-L: And promise to study hard, ok? 
+Brick: God, the kids these days. 
+Lila: Yeah. Tell me about it. 
+Brick: We have “No Skating” signs up everywhere, and yet. 
+Brick: I had to confiscate two boards today. 
+Brick: Told them to pick them up tomorrow. 
 <<wait 1>>
-G: ...
-G: Ok. 
-L: Good girl. 
-L: Okay, tidy up and let’s go. We’ll be late for your lesson.
+Lila: Where are you keeping the skateboards? 
+Brick: They’re in the cupboard in the tearoom. Beneath the instant coffee nobody uses. 
+Lila: Hmm. 
+<<wait 1>>
+Lila: You should try skating. Go to the rooftop carpark, while it’s empty. 
+Brick: Are you serious? 
+Lila: Haha, I’m just joking. 
+<<wait 1>>
+Lila: Unless you’re going to do it. 
+Brick: Honestly, I have thought about trying. But I shouldn’t. 
+Lila: Are you scared of injuring yourself? 
+Brick: Not exactly.
+Lila: Then what are you worried about? 
+Brick: You’re going to think I’m crazy. 
+Brick: I’m worried I’ll enjoy myself. Even just a little bit.
+Lila: Why’s that so bad? Do you really hate those teenagers that much? 
+Lila: That you’d not even want to like the things they like? 
+Brick: More like. It’s been so long since I remember trying something new. 
+Brick: What if I find it so fun, that tonight becomes the most memorable night of my life?  
+Lila: Why is that such a bad thing? 
+Brick: It’s not bad. It’s just… 
+<<wait 0.5>>
+Brick: big. 
+Lila: Mmm. 
+Brick: One of the things I like about this job is that it’s the same every day. 
+Brick: I don’t like feeling out of my element. 
+<<wait 1>>
+Lila: How about. If you try skateboarding tonight, I’ll try it with you. 
+Brick: Really? You’ll stack it. 
+Lila: I definitely will. But when else will we get a chance to try?
+Brick: Wow. Really? Okay. 
+Brick: Let’s go then.
 ===

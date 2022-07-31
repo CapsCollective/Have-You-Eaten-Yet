@@ -13,13 +13,18 @@ public class DialogueStarter : MonoBehaviour
     [SerializeField] private DialogueRunner dumplingDialogueRunner;
     [SerializeField] private DialogueRunner restauarantDialogueRunner;
 
-    // Need to fill this with restaurant nodes
-    // only works with dumpling nodes right now
-    private List<string> debugNodes = new List<string>
+    private Dictionary<int, string> dumplingDialogueStarts = new Dictionary<int, string>
     {
-        "Dumpling_1",
-        "Dumpling_2",
-        "Night_2_Shift"
+        { 1, "Restaurant_tutorial_scene_0" },
+        { 2, "Restaurant_Busy_Scene" },
+        { 3, "Restaurant_quiet_scene" },
+    };
+
+    private Dictionary<int, List<string>> restaurantDialogueStarts = new Dictionary<int, List<string>>
+    {
+        { 1, new List<string>{ "Night_1_Bar_Conversation", "Night_1_Table_Conversation" } },
+        { 2, new List<string>{ "Night_2_Complaining_Conversation", "Night_2_Table_Conversation", "Night_2_Table_Conversation_2" } },
+        { 3, new List<string>{ "Night_3_Bar_Conversation", "Night_3_Table_Conversation" } },
     };
 
     private void Awake()
@@ -28,14 +33,13 @@ public class DialogueStarter : MonoBehaviour
         SceneManager.OnRestaurantSceneLoad += StartRestaurantDialogue;
     }
 
-    private void StartDumplingsDialogue()
+    private void StartDumplingsDialogue(int night)
     {
         StartTutorialDialogue(1);
     }
 
-    private void StartRestaurantDialogue()
+    private void StartRestaurantDialogue(int night)
     {
-        restauarantDialogueRunner.StartDialogue(debugNodes[0]);
     }
 
     public void StartTutorialDialogue(int part)
@@ -49,12 +53,12 @@ public class DialogueStarter : MonoBehaviour
     {
         if (dumplingDialogueRunner.IsDialogueRunning) return;
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            dumplingDialogueRunner.StartDialogue(debugNodes[0]);
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
-            dumplingDialogueRunner.StartDialogue(debugNodes[1]);
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            dumplingDialogueRunner.StartDialogue(debugNodes[2]);
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //    dumplingDialogueRunner.StartDialogue(debugNodes[0]);
+        //else if(Input.GetKeyDown(KeyCode.Alpha2))
+        //    dumplingDialogueRunner.StartDialogue(debugNodes[1]);
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //    dumplingDialogueRunner.StartDialogue(debugNodes[2]);
     }
 #endif
 }

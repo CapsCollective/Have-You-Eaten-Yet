@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    public static Action OnDumplingsSceneLoad;
-    public static Action OnRestaurantSceneLoad;
+    public static Action<int> OnDumplingsSceneLoad;
+    public static Action<int> OnRestaurantSceneLoad;
     public static int Night = 1; 
     
     public SpriteRenderer fade;
@@ -32,7 +32,7 @@ public class SceneManager : MonoBehaviour
             arrows.SetActive(false);
             menu.SetActive(false);
             transform.position = Vector3.back;
-            fade.DOFade(0, 1f).OnComplete(() => OnDumplingsSceneLoad?.Invoke());
+            fade.DOFade(0, 1f).OnComplete(() => OnDumplingsSceneLoad?.Invoke(Night));
         });
     }
 
@@ -48,7 +48,7 @@ public class SceneManager : MonoBehaviour
             menu.SetActive(false);
             fade.DOFade(0, 1f).OnComplete(() => { 
                 _pan.enabled = true;
-                OnRestaurantSceneLoad?.Invoke();
+                OnRestaurantSceneLoad?.Invoke(Night);
             });
         });
     }

@@ -1,32 +1,20 @@
-title: Night_1_Table_Conversation
+title: Night_1_Bar_Conversation
 tags: 
 colorID: 0
-position: -832,-1196
+position: -882,-1324
 ---
-Ray: This place is just as good as I remembered it. 
-Donna: Have you been here before? 
-Ray: Yes, we have! Five years ago, your birthday. 
-Donna: I don’t remember.
-Ray: We sat at that table over there. I bought you a gold bracelet. 
-Donna: Is that so? I thought that night we went to a Mexican place. 
-Donna: Am I remembering wrong?
-Ray: Maybe it’s me.    
-Ray: That’s the way it goes, isn’t it? 
-Donna: Mmhmm. 
-<<wait 2>>
-Ray: If only we could bookmark it. 
-Donna: What do you mean?
-Ray: The experience. Or the memory. 
-Ray: Like you would slide a bookmark into a paperback, except it is your life. 
-Ray: And years later, return to that moment, as if nothing has ever changed. Would you do it? 
-Donna: What kind of moment? 
-Ray: Anything. It could be as simple as us having dinner, right now. 
-Donna: There’s nothing special about that. 
-Ray: It doesn’t need to be special. 
-Ray: It just has to be a moment worth coming back to.
-Donna: Hmm. 
-Donna: Yeah. I would do it. 
-Ray: I would do it too. 
-Donna: It’s getting late. 
-Ray: Yeah. We should go.
+Ke: Thanks for the food. I haven’t had any time to cook lately. 
+Ke: With things so busy at work, and with my son… 
+Peng: Is he still sick? 
+Ke: A little better now, but still coughing. 
+Peng: Do you have pears at home? 
+Ke: Pears? 
+Peng: Yeah. The big round yellow ones are best. 
+Peng: Boil them with rock sugar. Add some goji berries if you have them. 
+Peng: That will treat the cough. 
+Ke: How does it work? 
+Peng: I don’t know. But it’s what my parents taught me.
+Peng: And it tastes really good, so your son will like it.  
+Peng: My mother used to say it was the best part of getting sick! 
+Ke: Thank you. I’ll let you know how it goes.
 ===
