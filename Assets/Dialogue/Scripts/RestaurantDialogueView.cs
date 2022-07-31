@@ -17,7 +17,7 @@ public class DialogueSettings
 
 public class RestaurantDialogueView : DialogueViewBase
 {
-    public static Action OnNewRestaurantDialogue;
+    public Action OnNewRestaurantDialogue;
 
     [SerializeField] private SerializedDictionary<string, DialogueSettings> spawnPositions = new SerializedDictionary<string, DialogueSettings>();
     [SerializeField] private GameObject dialogueBox;
@@ -39,6 +39,7 @@ public class RestaurantDialogueView : DialogueViewBase
         DialogueSettings dialogueSettings = spawnPositions[$"{dialogueLine.CharacterName}_{SceneManager.Night}"];
         Transform box = Instantiate(dialogueBox, transform).transform;
         DialogueText dialogue = box.GetComponent<DialogueText>();
+        dialogue.Setup(this);
         dialogue.SetFont(dialogueSettings.Font);
         dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
         dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
@@ -71,7 +72,10 @@ public class RestaurantDialogueView : DialogueViewBase
     private void OnDrawGizmosSelected()
     {
         foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions) {
-            Gizmos.DrawSphere(kvp.Value.Character.transform.position + new Vector3(kvp.Value.Position.x, kvp.Value.Position.y), 1f);
+            if (kvp.Value.Character != null)
+            {
+                Gizmos.DrawSphere(kvp.Value.Character.transform.position + new Vector3(kvp.Value.Position.x, kvp.Value.Position.y), 1f);
+            }
         }
     }
 }

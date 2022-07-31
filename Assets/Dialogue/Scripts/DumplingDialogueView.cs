@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class DumplingDialogueView : DialogueViewBase
 {
-    public static Action OnNewRestaurantDialogue;
+    public static Action OnNewDumplingDialogue;
 
     [SerializeField] private SerializedDictionary<string, DialogueSettings> spawnPositions = new SerializedDictionary<string, DialogueSettings>();
     [SerializeField] private GameObject dialogueBox;
@@ -30,7 +30,7 @@ public class DumplingDialogueView : DialogueViewBase
             _currentAnimation = null;
         }
 
-        OnNewRestaurantDialogue?.Invoke();
+        OnNewDumplingDialogue?.Invoke();
         DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
         Transform box = Instantiate(dialogueBox, transform).transform;
         DialogueText dialogue = box.GetComponent<DialogueText>();
@@ -94,9 +94,10 @@ public class DumplingDialogueView : DialogueViewBase
         optionButtonCanvasGroup.interactable = false;
         foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
         {
+            if (kvp.Value.Character == null) break;
             kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(0, timeToFade).OnComplete(() =>
             {
-                OnNewRestaurantDialogue?.Invoke();
+                OnNewDumplingDialogue?.Invoke();
             });
         }
     }

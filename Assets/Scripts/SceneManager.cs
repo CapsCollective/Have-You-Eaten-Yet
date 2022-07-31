@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
@@ -7,12 +8,14 @@ public class SceneManager : MonoBehaviour
 {
     public static Action<int> OnDumplingsSceneLoad;
     public static Action<int> OnRestaurantSceneLoad;
-    public static int Night = 1; 
+    public static int Night = 2; 
     
     public SpriteRenderer fade;
     public GameObject dumplings, restaurant, arrows, menu;
 
     private CameraPan _pan;
+
+    [SerializeField] private List<GameObject> _restaurantNights = new List<GameObject>();
 
     private void Start()
     {
@@ -21,9 +24,9 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
-    public void ToDumplings(int night)
+    public void ToDumplings()
     {
-        Night = night;
+        //Night = night;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             _pan.enabled = false;
@@ -37,13 +40,20 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
-    public void ToRestaurant(int night)
+    public void ToRestaurant()
     {
-        Night = night;
+        // Disable all restaurant scenes before setting the new one up
+        foreach(GameObject g in _restaurantNights)
+        {
+            g.SetActive(false);
+        }
+
+        //Night = night;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             dumplings.SetActive(false);
             restaurant.SetActive(true);
+            _restaurantNights[Night - 1].SetActive(true);
             arrows.SetActive(true);
             menu.SetActive(false);
             fade.DOFade(0, 1f).OnComplete(() => { 

@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7854676928205013250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7854676928205013249}
+  - component: {fileID: 7854676928205013279}
+  - component: {fileID: 7854676928205013248}
+  - component: {fileID: 6891631611170345080}
+  m_Layer: 0
+  m_Name: Restaurant Dialogue System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7854676928205013249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854676928205013250}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7854676928205013279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854676928205013250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yarnProject: {fileID: 7545569452688597077, guid: 11d7a35d0a923c84ab6700c7870cf3a1, type: 3}
+  _variableStorage: {fileID: 7854676928205013248}
+  dialogueViews:
+  - {fileID: 6891631611170345080}
+  startNode: Start
+  startAutomatically: 0
+  runSelectedOptionAsLine: 0
+  lineProvider: {fileID: 0}
+  verboseLogging: 1
+  onNodeStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onNodeComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onCommand:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7854676928205013248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854676928205013250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebug: 0
+  debugTextView: {fileID: 0}
+--- !u!114 &6891631611170345080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854676928205013250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f91eeac50e2fa0b4e8fea84f5c99a7c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPositions:
+    list:
+    - Key: Donna_1
+      Value:
+        Position: {x: -25, y: 20}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Ray_1
+      Value:
+        Position: {x: 25, y: 20}
+        FlipX: 1
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Peng_1
+      Value:
+        Position: {x: -20, y: 20}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 11400000, guid: 6a9175b787b57f9489b4507093281b8a, type: 2}
+    - Key: Ke_1
+      Value:
+        Position: {x: -30, y: -10}
+        FlipX: 1
+        FlipY: 1
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Brick_2
+      Value:
+        Position: {x: 25, y: 20}
+        FlipX: 1
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Lila_2
+      Value:
+        Position: {x: 20, y: -8}
+        FlipX: 0
+        FlipY: 1
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: L_2
+      Value:
+        Position: {x: -25, y: 20}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: G_2
+      Value:
+        Position: {x: 25, y: 20}
+        FlipX: 1
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Rob_2
+      Value:
+        Position: {x: -20, y: 20}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Sal_2
+      Value:
+        Position: {x: 20, y: 20}
+        FlipX: 1
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Jane_3
+      Value:
+        Position: {x: -25, y: 20}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Ken_3
+      Value:
+        Position: {x: 25, y: 20}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Lila_3
+      Value:
+        Position: {x: -20, y: 10}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: Peng_3
+      Value:
+        Position: {x: -20, y: 10}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 11400000, guid: 6a9175b787b57f9489b4507093281b8a, type: 2}
+    keyCollision: 0
+  dialogueBox: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
+  timeToWait: 3
+  timePerCharacter: 0.05
+  timeToFade: 1

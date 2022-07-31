@@ -35,11 +35,17 @@ public class DialogueStarter : MonoBehaviour
 
     private void StartDumplingsDialogue(int night)
     {
-        StartTutorialDialogue(1);
+        StartTutorialDialogue(night);
     }
 
     private void StartRestaurantDialogue(int night)
     {
+        //var dialogues = restaurantDialogueStarts[night];
+        //foreach (string d in dialogues) 
+        //{
+        //    DialogueRunner newDr = Instantiate(restauarantDialogueRunner, restauarantDialogueRunner.transform.parent);
+        //    newDr.StartDialogue(d);
+        //}
     }
 
     public void StartTutorialDialogue(int part)

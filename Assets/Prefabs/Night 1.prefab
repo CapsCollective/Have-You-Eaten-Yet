@@ -413,6 +413,8 @@ Transform:
   - {fileID: 8020637358956771942}
   - {fileID: 8020637357870167746}
   - {fileID: 8020637359599222433}
+  - {fileID: 5918042703500879615}
+  - {fileID: 1542347756622840380}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -767,3 +769,143 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &4548766977448929278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8020637359207662573}
+    m_Modifications:
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013250, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_Name
+      value: Restaurant Dialogue System
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013279, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: startNode
+      value: Night_1_Table_Conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013279, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: startAutomatically
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 84680a525630bd34d829246edb896a10, type: 3}
+--- !u!4 &5918042703500879615 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+  m_PrefabInstance: {fileID: 4548766977448929278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8675883484842935101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8020637359207662573}
+    m_Modifications:
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013250, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: m_Name
+      value: Restaurant Dialogue System (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013279, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: startNode
+      value: Night_1_Bar_Conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854676928205013279, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: startAutomatically
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 84680a525630bd34d829246edb896a10, type: 3}
+--- !u!4 &1542347756622840380 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
+  m_PrefabInstance: {fileID: 8675883484842935101}
+  m_PrefabAsset: {fileID: 0}

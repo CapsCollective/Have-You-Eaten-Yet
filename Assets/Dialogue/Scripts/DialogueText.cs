@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using DG.Tweening;
 using UnityEngine;
@@ -18,10 +19,12 @@ public class DialogueText : MonoBehaviour
     private float _sine;
     private float _startX;
     private CanvasGroup _canvasGroup;
+    private RestaurantDialogueView _dialogueView;
 
-    private void Awake()
+    public void Setup(RestaurantDialogueView dv)
     {
-        RestaurantDialogueView.OnNewRestaurantDialogue += OnNewRestaurantDialogue;
+        _dialogueView = dv;
+        _dialogueView.OnNewRestaurantDialogue += OnNewRestaurantDialogue;
     }
 
     private void Start()
@@ -32,6 +35,7 @@ public class DialogueText : MonoBehaviour
 
     private void OnNewRestaurantDialogue()
     {
+        _dialogueView.OnNewRestaurantDialogue -= OnNewRestaurantDialogue;
         if (_startFloat) return;
         _startFloat = true;
 
