@@ -7,7 +7,8 @@ public class SceneManager : MonoBehaviour
 {
     public static Action OnDumplingsSceneLoad;
     public static Action OnRestaurantSceneLoad;
-
+    public static int Night = 1; 
+    
     public SpriteRenderer fade;
     public GameObject dumplings, restaurant, arrows, menu;
 
@@ -20,8 +21,9 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
-    public void ToDumplings()
+    public void ToDumplings(int night)
     {
+        Night = night;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             _pan.enabled = false;
@@ -35,8 +37,9 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
-    public void ToRestaurant()
+    public void ToRestaurant(int night)
     {
+        Night = night;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             dumplings.SetActive(false);
