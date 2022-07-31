@@ -1,9 +1,9 @@
-title: Night_2_Shift
+title: Restaurant_Busy_Scene
 tags: 
 colorID: 0
-position: -349,-1005
+position: -731,-935
 ---
-A: Okay. You’ve been doing pretty well these last few weeks. 
+A: Okay. You’ve been doing well these last few weeks. 
 A: But tonight is going to be a challenge. Mid-Autumn festival. Lots of customers. 
 A: Do you think you can handle it? 
 -> Yes 
@@ -15,16 +15,9 @@ A: I’m going to roll the dough as fast as I can. Try to keep up.
 A: How are you managing? 
 -> I’m doing okay! 
     A: That’s good! 
-    <<jump Dialogue_1>> 
 -> It’s pretty hard. 
-    A: That’s okay. Focus on the work. 
-    <<jump Dialogue_2>>
-===
-title: Dialogue_1
-tags: 
-colorID: 0
-position: -317,-707
----
+    A: That’s okay. Try to stay focused, ignore us if we’re distracting you. 
+[Dialogue 1]
 A: It’s good to see you’re getting the rhythm of it. 
 -> How do you roll the wrappers like that?
     A: Practice. One hand rolls and one hand turns.
@@ -34,67 +27,52 @@ A: It’s good to see you’re getting the rhythm of it.
 -> How long have you worked here for?
     B: I started in 1998
     A: At this restaurant 5 years, but I started at a different place in 2003 
-    ->[What made you stay?
+    ->What made you stay?
         A: At first the owner was my uncle, but he sold it when he retired.
         A: By that point I’d gotten used to it, I figured I was too old to start something new. 
-        B: I’m studying finance on the side. But it’s good work, I like the routine. 
+        B: I’m learning finance on the side. But it’s good work, I like the routine. 
         A: There are lots of worse places out there. 
     ->How much has changed?
         A: Just about nothing. It’s the same as the day I joined. 
         B: Yeah, from the recipe to the cutlery. All exactly the same. 
-        A: We’ll be historical artefacts before too long! 
+        A: They should put us in a museum! 
+->[time out] (The player doesn’t ask anything) 
+	<<wait 4>> 
 A: How are you going? Are you keeping up? 
 -> Yeah.
-    A: Good to hear. Not much longer to go.
-    <<jump Dialogue_3>>
+    A: Good to hear. All the seats are filled up now, so let’s keep up the pace.
 ->Actually…
     A: You’re doing fine. Focus on the work.
-    <<jump Dialogue_2>>
-===
-title: Dialogue_2
-tags: 
-colorID: 0
-position: -463,-452
----
 B: How is your son doing? 
 A: Yes, he was home for dinner last week. But I only see him once a month or so.
 A: He doesn’t cook for himself, always frozen food or take away.
 B: Ah, that’s no good.
 A: I make food for him every time, I ask if he wants to learn and he says no.
-B: My brother is the same. It’s a new generation thing. 
-B: Do you cook for yourself?
--> Yes
+B: My brother is the same. It’s a new generation thing.
+A: No, I think it’s just how things are lately. Everyone is too busy, no time.  
+-> I mostly cook for myself. 
     B: Who taught you?
     -> I learned from family.
         A: That's good. That's the way it should go. 
     -> I learned from recipes.
         A: That's okay. But how do you know if it is a good recipe? 
+        A: Some of the recipes I see online are all wrong. Not authentic at all. 
     -> I taught myself. 
         B: How do you teach yourself? Did you make a lot of mistakes at first? 
         -> Yeah. 
             B: I'm sure you're better now then. It's good to learn from mistakes. 
         -> No. 
             B: You must be very lucky then! Natural talent. 
--> No 
+-> I wish I was better at cooking. 
     A: Do you have anyone to teach you? 
     -> Yes
         A: You should learn then. There's no excuse to not be able to cook, I think. 
     -> No 
         B: That's a shame. It's always easier to learn from someone else. 
--> Sometimes
-    B: Who taught you?
-    -> I learned from family.
-        A: That's good. That's the way it should go. 
-    -> I learned from recipes.
-        A: That's okay. But how do you know if it is a good recipe? 
-    -> I taught myself. 
-        B: How do you teach yourself? Did you make a lot of mistakes at first? 
-        -> Yeah. 
-            B: I'm sure you're better now then. It's good to learn from mistakes. 
-        -> No. 
-            B: You must be very lucky then! Natural talent. 
+->[Time out]
+    <<wait 5>>
 A: You know my son keeps telling me I should retire soon.
-B: You should if you can.
+B: You should if money isn't an issue.
 A: I think about it sometimes.
 A: But even when I took two weeks off for new year, I was sitting at home and I was bored.
 A: It feels like there’s something wrong. If my hands aren’t doing anything.
@@ -103,30 +81,29 @@ A: Do you know what I mean?
     A: Yeah, I hear lots of people have that feeling. 
 -> No  
     B: I'm the same. I'd rather have less to do than more. 
-A: Okay that’s enough. The orders are wrapping up. Great work today!
-===
-title: Dialogue_3
-tags: 
-colorID: 0
-position: -188,-474
----
-B: We’ll be quiet so you can focus. 
-B: Don’t get distracted, just keep up the pace. 
-<<wait 5>> 
-A: You’re doing well. Keep it up. 
-<<wait 3>> 
-C: Hey, I’ve been waiting for my food for half an hour now. 
-C: What’s taking so long? 
+D: Hey, I’ve been waiting for my food for half an hour now. 
+D: What’s taking so long? 
 -> Go back and sit down, it will come soon.  
-    C: Alright, but it better.    
+    D: Alright, but it better.    
 -> Sorry for the wait! 
-    C: Well how long will it be? Hurry up, don’t just sulk about it! 
+    D: Well how long will it be? Hurry up, don’t just sulk about it! 
 -> *Time-out*  
     A: Go sit down, food will come shortly!! 
-    A: Ok. Go tell the cashier to serve him last. 
+B: Don't let him distract you. I’ll go talk to him.  
+A: Make sure we serve him last. 
+B: On it. 
 <<wait 2>>
-B: Don't let him distract you. 
-B: Let’s keep going. 
-<<wait 5>>
+A: It’s good to work in the back of house. Less dealing with customers. 
+A: But I know waiters who love their job too. 
+A: We don’t get to see anyone’s happy face when they receive their food. 
+A: What would you prefer? 
+->I like talking with the customers.
+    A: You must be good with people then. 
+    A: We see the best and the worst of people, working here. 
+->I would rather have my own space.  
+    A: That’s how I feel. 
+    A: If you find a good team, you can trust others to treat you nicely. 
+    A: But with customers, you never know if they will be kind or cruel. 
+<<wait 3>>
 A: Okay that’s enough. The orders are wrapping up. Great work today!
 ===

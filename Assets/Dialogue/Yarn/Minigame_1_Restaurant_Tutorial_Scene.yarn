@@ -1,0 +1,59 @@
+title: Restaurant_tutorial_scene_1
+tags: 
+colorID: 0
+position: -722,-1046
+---
+A: Have you made dumplings before?
+-> Yes
+    A: You should still watch carefully. Everyone does it a little differently. 
+-> No 
+    A: You’ll learn quickly. It’s not difficult. You just have to watch someone else do it first. 
+<<Wait 1>>
+A: First I'll toss you a wrapper.
+===
+title: Restaurant_tutorial_scene_2
+position: -731,-915
+---
+A: Grab a ball of filling from the bowl. Not too much. 
+===
+title: Restaurant_tutorial_scene_3
+position: -715,-961
+---
+A: Then place it onto your wrapper. 
+===
+title: Restaurant_tutorial_scene_4
+position: -684,-984
+---
+A: Pull down from the top of the wrapper to fold it over. Then pull upwards to close it up.
+===
+title: Restaurant_tutorial_scene_5
+position: -684,-984
+---
+A: Looks good! 
+A: Once they're ready, drag them over to the tray on your right. 
+A: Don’t worry about making them look too perfect. 
+A: Once they’re in the pot you won’t be able to tell which ones are yours.
+A: And if you worry too much, you slow down. Can you do that?
+-> Yes.
+-> I'll try.
+A: Good to hear. 
+A: Try to make a few yourself, now.
+A: Good, you've made $dumplingsMade dumplings. 
+A: How are you finding it? 
+-> It's easy
+    A: It’s good that it's a quiet night. Wait until you're rostered on when it's busy. 
+-> It's tricky. 
+    A: Don't worry about shape or speed for now. 
+    A: What you want is for your fingers to remember the motions.
+    A: Soon you will be able to fold without thinking! 
+<<wait 3>>
+B: Yeah you're doing well. 
+B: Even if you mess up, just throw it away, don't get flustered. 
+<<wait 3>>
+A: Okay finish up the one you're on.
+A: That's enough for today.
+A: Oh, also. After each shift, you'll need to close up shop. 
+A: Some people like to sit around after the kitchen closes. 
+A: You can let them keep talking if you want, or you can shoo them away by clearing their table.
+A: I'll leave it to you.
+===

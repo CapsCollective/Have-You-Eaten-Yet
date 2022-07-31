@@ -1,7 +1,7 @@
-title: Start
+title: Night_3_Table_Conversation
 tags: 
 colorID: 0
-position: -262,-754
+position: -1081,-1845
 ---
 Jane: I hope the waiter doesn’t notice me. 
 Ken: Which one? 
@@ -11,19 +11,18 @@ Jane: Well… last time I was here…
 Jane: You know how after you close up on a Thursday and you’re tired, and this place is the last to close… 
 Ken: Yeah? 
 Jane: So I sat down, and the waiter poured me tea and gave me a menu. 
-Ken: That sounds pretty normal. 
 Jane: I started sipping their tea, but it was too hot and I spilt half the cup on myself. 
 Jane: And I was embarrassed, so I got up and left. 
 <<wait 1>>
 Ken: That’s it? 
-Jane: I was a waste of tea! 
+Jane: I was a waste of tea! A tea thief! 
 Ken: How long ago was this? 
 Jane: A few months, I think. 
-Ken: They definitely don’t remember. And they definitely don’t care. 
+Ken: They won’t remember. And if they did, they wouldn’t care. 
 <<wait 1>>
 Jane: What if they do though? 
 Ken: Even if they do. Will they ever bring it up with you? 
-Jane: It would be worse if they did. But it would be also bad if they didn’t! 
+Jane: It would be worse if they did. But it would also be bad if they didn’t! 
 Ken: So what were you going to do, never eat here again? 
 <<wait 1>>
 Jane: Yes! 

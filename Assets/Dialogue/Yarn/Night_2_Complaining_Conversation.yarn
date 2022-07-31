@@ -1,22 +1,16 @@
-title: Start
+title: Night_2_Table_Conversation
 tags: 
 colorID: 0
-position: -212,-624
+position: -930,-1454
 ---
 Brick: God, the kids these days. 
 Lila: Yeah. Tell me about it. 
-Brick: The “No Skating” sign couldn’t be any clearer, and yet. 
+Brick: We have “No Skating” signs up everywhere, and yet. 
 Brick: I had to confiscate two boards today. 
-Brick: I told them they could pick them up tomorrow. 
-Lila: Any angry phone calls from the parents? 
-Brick: No. Not yet. 
-Lila: Are you working early tomorrow? 
-Brick: Start at 11. You? 
-Lila: 8. If I get any parents I’ll tell them to wait until 11. 
-Brick: Gee. Thanks. 
+Brick: Told them to pick them up tomorrow. 
 <<wait 1>>
 Lila: Where are you keeping the skateboards? 
-Brick: They’re in the cupboard under the tearoom. Beneath the instant coffee nobody uses. 
+Brick: They’re in the cupboard in the tearoom. Beneath the instant coffee nobody uses. 
 Lila: Hmm. 
 <<wait 1>>
 Lila: You should try skating. Go to the rooftop carpark, while it’s empty. 
@@ -29,9 +23,10 @@ Lila: Are you scared of injuring yourself?
 Brick: Not exactly.
 Lila: Then what are you worried about? 
 Brick: You’re going to think I’m crazy. 
-Brick: I’m worried I’ll enjoy skating. Even just a little bit.
-Lila: Why’s that so bad? Do you really hate those teenagers that much? That you’d not even want to like the things they like? 
-Brick: No, it’s more that. It’s been so long since I remember trying something new. Like, completely brand new.  
+Brick: I’m worried I’ll enjoy myself. Even just a little bit.
+Lila: Why’s that so bad? Do you really hate those teenagers that much? 
+Lila: That you’d not even want to like the things they like? 
+Brick: More like. It’s been so long since I remember trying something new. 
 Brick: What if I find it so fun, that tonight becomes the most memorable night of my life?  
 Lila: Why is that such a bad thing? 
 Brick: It’s not bad. It’s just… 
@@ -43,7 +38,7 @@ Brick: I don’t like feeling out of my element.
 <<wait 1>>
 Lila: How about. If you try skateboarding tonight, I’ll try it with you. 
 Brick: Really? You’ll stack it. 
-Lila: I almost definitely will. But when else will we get a chance to try it?
+Lila: I definitely will. But when else will we get a chance to try?
 Brick: Wow. Really? Okay. 
 Brick: Let’s go then.
 ===

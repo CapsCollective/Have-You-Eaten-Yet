@@ -1,0 +1,120 @@
+title: Restaurant_quiet_scene
+tags: 
+colorID: 0
+position: -783,-1067
+---
+C: Sorry if the wrappers come out slowly today.
+<<set $mood = 0>>
+C: I’m more used to working at the counter, so I’m out of practice.
+B: Thank you for helping out back here. 
+B: We just need to keep the place open until the lease is up. 
+B: Do your best, and hopefully we won’t get too busy.
+C: If I toss you a wrapper that you can’t use, just drag it away from the workspace.
+<<wait 3>>
+C: How are things going?
+-> You’re doing okay.
+    <<set $mood = $mood + 1>>           	
+    C: That’s a relief. Thank you for being patient.
+-> Can you make the wrappers faster?
+    <<set $mood = $mood - 1>>
+    C: I’ll try. Sorry to keep you waiting.
+-> …(Time out)
+	C: Sorry to keep you waiting
+B: It looks quiet out there tonight.
+C: Yeah. Less business lately.
+C: It’s been like that since the new shopping centre opened down the road.
+B: Have either of you been yet?
+C: Yeah. It’s huge. Very clean.
+B: I don’t like it. This old place can’t compete!
+B: No one will have any reason to come to the old mall anymore.
+<<Wait 2>>
+C: Do the wrappers look alright?
+-> They’re mostly good.
+    <<set $mood = $mood + 1>>
+ 	C: Okay, I’ll keep it up! Sorry if I make any mistakes.
+-> I can’t use many of these.
+    <<set $mood = $mood - 1>>
+	C: Sorry, I’ll try to pay more attention.
+B: You shouldn’t apologise so much.
+B: Just make sure you concentrate.
+C: Ok.
+<<wait 2>>
+B: I miss Old Peng. It’s a lot more quiet without her here. 
+C: She always talked about retiring.
+B: Even so, it’s a surprise that she actually did.
+B: Though her son can take care of her. 
+B: She never needed the money when she was working. .
+B: Just needed something to do.
+C: That’s very lucky of her. Once this place closes down I’ll have to find another job.
+B: What kinds of places are you looking for?
+C: Oh, anywhere that will take me, really. Work is work. Doesn’t have to be a restaurant.
+C: What about you? Would you ever work in a place like this again?
+-> I would.
+    C: Oh really? What do you like about it?
+    -> It’s easy.
+      	C: It’s not that easy!
+      	C: Or I don’t think so, anyway…
+      	B: It’s only easy once you’re used to it.
+     	B: I’m sure you wouldn’t have said it was easy on your first day.
+  	-> I like working with my hands.
+      	B: You’re like me, then.
+     	B: I can’t imagine ever sitting down at a desk to work.
+      	B: I would be so bored!
+      	C: That sounds amazing, honestly.
+      	C: I would love nothing more than to be bored at work.
+      	C: To be paid to be bored at work, I mean.
+   	-> I like the challenge.
+      	C: I get what you mean.
+      	C: On some days I like the challenge too.
+      	C: But if you told me I’d never have to deal with customers again…
+        C: I would retire like Old Peng!
+        B: You’re too young for that!
+        C: And I don’t have anyone to look after me…
+        B: You can look after yourself!
+-> I probably won’t.
+    B: That’s a shame. You picked it up quickly.
+    B: And the things you learn don’t go away easily.
+    C: If I had the choice, I wouldn’t either.
+    C: I’d want something slow paced. I don’t like coming home exhausted.
+<<wait 1>>
+B: I think, one day, both of you will have good memories of working here.
+B: Even if you don’t think that now.
+<<if $mood > 1>>
+	C: I think I will miss it, definitely. 
+	C: Not every day was good, but we would always get through it together. 
+<<elseif $mood < 1>> 
+	C: I doubt it. 
+	C: Sometimes I still dream I’m at work. And I wake up tired and cranky. 
+<<endif>>
+B: Every now and again I think back to when I first started, and I wish I could go back.
+B: I hated it at first. I was slow, and clumsy, and I was yelled at a lot.
+B: But even those bad memories become a part of you.
+-> I can’t imagine that. 
+	B: No one starts out good at their job, you know. 
+    B: It takes time and practice. 
+    B: I was afraid of losing my job every day. 
+    B: That fear motivated me to get faster, be more careful.  
+-> Old Peng yelled at you? 
+    B: No, this was the previous owner before her.  
+    B: But he didn’t stick around for long. All the workers hated him.
+-> [time out]
+    C: Did Old Peng use to yell at you?
+    B: No, this was the previous owner before her.
+    B: But he didn’t stick around for long. All the workers hated him.
+C: One day I wish I could own my own store. 
+C: I’d treat people well. Never raise my voice. 
+C: No overtime, no understaffing. 
+C: Sick day? You got it. 
+-> That sounds nice. 
+	C: I’ve been thinking about this for a long time. 
+	B: Yeah, call me when you’re open. I’ll come work for you! 
+	C: It’s just a dream, though. 
+-> You’d go out of business. 
+	C: Part of me worries that’s how it will go. 
+	C: Maybe that’s why bad experiences are so normal. 
+	C: But surely it would be worth trying, anyway. 
+<<wait 2>> 
+C: My hands are tired. 
+B: I don’t see too many people out there anymore.
+B: Let’s wrap up for the day.
+===

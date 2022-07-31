@@ -1,7 +1,7 @@
-title: Restaurant Parents Dialogue
+title: Night_2_Table_Conversation_2
 tags: 
 colorID: 0
-position: -401,-1057
+position: -1031,-1715
 ---
 L: Hey, listen closely. 
 L: You need to study hard, otherwise you will be working in a place like this. 
@@ -11,7 +11,7 @@ G: Why?
 L: I used to work in a restaurant while I was younger. 
 L: It was hard. Late nights every day. Trust me, you don’t want to live like that. 
 G: But did you get to wake up later? 
-L: Yes. I would start at 1. 
+L: Yes. I would start in the afternoon.
 G: That doesn’t sound so bad. 
 L: It was, you just have to trust me. 
 L: And promise to study hard, ok? 
@@ -19,5 +19,5 @@ L: And promise to study hard, ok?
 G: ...
 G: Ok. 
 L: Good girl. 
-L: Okay, finish up and let’s go. We’ll be late for your lesson.
+L: Okay, tidy up and let’s go. We’ll be late for your lesson.
 ===
