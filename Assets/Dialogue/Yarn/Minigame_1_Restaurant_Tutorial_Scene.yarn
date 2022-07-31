@@ -1,4 +1,4 @@
-title: Restaurant_tutorial_scene_1
+title: Restaurant_tutorial_scene_0
 tags: 
 colorID: 0
 position: -722,-1046
@@ -11,22 +11,22 @@ A: Have you made dumplings before?
 <<Wait 1>>
 A: First I'll toss you a wrapper.
 ===
-title: Restaurant_tutorial_scene_2
+title: Restaurant_tutorial_scene_1
 position: -731,-915
 ---
 A: Grab a ball of filling from the bowl. Not too much. 
 ===
-title: Restaurant_tutorial_scene_3
+title: Restaurant_tutorial_scene_2
 position: -715,-961
 ---
 A: Then place it onto your wrapper. 
 ===
-title: Restaurant_tutorial_scene_4
+title: Restaurant_tutorial_scene_3
 position: -684,-984
 ---
 A: Pull down from the top of the wrapper to fold it over. Then pull upwards to close it up.
 ===
-title: Restaurant_tutorial_scene_5
+title: Restaurant_tutorial_scene_4
 position: -684,-984
 ---
 A: Looks good! 

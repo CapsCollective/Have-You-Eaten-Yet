@@ -10,7 +10,8 @@ public class DialogueStarter : MonoBehaviour
     // This will need changing
     const string RESTAURANT_START = "Start";
 
-    [SerializeField] private DialogueRunner Runner;
+    [SerializeField] private DialogueRunner dumplingDialogueRunner;
+    [SerializeField] private DialogueRunner restauarantDialogueRunner;
 
     // Need to fill this with restaurant nodes
     // only works with dumpling nodes right now
@@ -29,26 +30,31 @@ public class DialogueStarter : MonoBehaviour
 
     private void StartDumplingsDialogue()
     {
-        Runner.StartDialogue(debugNodes[0]);
+        StartTutorialDialogue(1);
     }
 
     private void StartRestaurantDialogue()
     {
-        Runner.StartDialogue(debugNodes[0]);
+        restauarantDialogueRunner.StartDialogue(debugNodes[0]);
+    }
+
+    public void StartTutorialDialogue(int part)
+    {
+        dumplingDialogueRunner.StartDialogue($"Restaurant_tutorial_scene_{part}");
     }
 
 #if UNITY_EDITOR
     // Update is called once per frame
     void Update()
     {
-        if (Runner.IsDialogueRunning) return;
+        if (dumplingDialogueRunner.IsDialogueRunning) return;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            Runner.StartDialogue(debugNodes[0]);
+            dumplingDialogueRunner.StartDialogue(debugNodes[0]);
         else if(Input.GetKeyDown(KeyCode.Alpha2))
-            Runner.StartDialogue(debugNodes[1]);
+            dumplingDialogueRunner.StartDialogue(debugNodes[1]);
         else if (Input.GetKeyDown(KeyCode.Alpha3))
-            Runner.StartDialogue(debugNodes[2]);
+            dumplingDialogueRunner.StartDialogue(debugNodes[2]);
     }
 #endif
 }
