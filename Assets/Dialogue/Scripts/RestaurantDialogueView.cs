@@ -36,7 +36,7 @@ public class RestaurantDialogueView : DialogueViewBase
         }
 
         OnNewRestaurantDialogue?.Invoke();
-        DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
+        DialogueSettings dialogueSettings = spawnPositions[$"{dialogueLine.CharacterName}_{SceneManager.Night}"];
         Transform box = Instantiate(dialogueBox, transform).transform;
         DialogueText dialogue = box.GetComponent<DialogueText>();
         dialogue.SetFont(dialogueSettings.Font);
