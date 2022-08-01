@@ -35,7 +35,7 @@ public class RestaurantDialogueView : DialogueViewBase
             _currentAnimation = null;
         }
 
-        OnNewRestaurantDialogue?.Invoke();
+        //OnNewRestaurantDialogue?.Invoke();
         DialogueSettings dialogueSettings = spawnPositions[$"{dialogueLine.CharacterName}_{SceneManager.Night}"];
         Transform box = Instantiate(dialogueBox, transform).transform;
         DialogueText dialogue = box.GetComponent<DialogueText>();
@@ -43,6 +43,7 @@ public class RestaurantDialogueView : DialogueViewBase
         dialogue.SetFont(dialogueSettings.Font);
         dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
         dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
+        dialogue.HookAction(onDialogueLineFinished);
         box.SetParent(dialogueSettings.Character.transform);
         box.localPosition = dialogueSettings.Position;
 
@@ -52,7 +53,7 @@ public class RestaurantDialogueView : DialogueViewBase
             timePerCharacter,
             timeToWait,
             i =>  dialogue.RevealText(i),
-            onDialogueLineFinished
+            OnNewRestaurantDialogue
         );
     }
 

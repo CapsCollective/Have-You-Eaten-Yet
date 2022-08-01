@@ -36,6 +36,7 @@ public class DumplingDialogueView : DialogueViewBase
         DialogueText dialogue = box.GetComponent<DialogueText>();
         dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
         dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
+        dialogue.HookAction(onDialogueLineFinished);
         
         if(dialogueSettings.Character != null) box.SetParent(dialogueSettings.Character.transform);
         box.localPosition = dialogueSettings.Position;
@@ -44,7 +45,7 @@ public class DumplingDialogueView : DialogueViewBase
         _currentAnimation = this.RunText(dialogueLine.TextWithoutCharacterName.Text, timePerCharacter, timeToWait, (i) =>
         {
             dialogue.RevealText(i);
-        }, onDialogueLineFinished);
+        }, OnNewDumplingDialogue);
     }
 
     public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)

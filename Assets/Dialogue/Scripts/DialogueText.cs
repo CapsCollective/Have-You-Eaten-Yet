@@ -20,11 +20,17 @@ public class DialogueText : MonoBehaviour
     private float _startX;
     private CanvasGroup _canvasGroup;
     private RestaurantDialogueView _dialogueView;
+    private System.Action _dialogueAction;
 
     public void Setup(RestaurantDialogueView dv)
     {
         _dialogueView = dv;
         _dialogueView.OnNewRestaurantDialogue += OnNewRestaurantDialogue;
+    }
+
+    public void HookAction(Action onDialogueFinished)
+    {
+        _dialogueAction = onDialogueFinished;
     }
 
     private void Awake()
@@ -50,7 +56,7 @@ public class DialogueText : MonoBehaviour
         {
             transform.localPosition = new Vector3(_startX + (Mathf.Sin(_sine) * sineStrength), transform.localPosition.y);
         });
-        GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic);
+        GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic).OnComplete(() => _dialogueAction.Invoke());
     }
 
     public void SetSpriteFlip(bool x, bool y)
