@@ -56,7 +56,11 @@ public class DialogueText : MonoBehaviour
         {
             transform.localPosition = new Vector3(_startX + (Mathf.Sin(_sine) * sineStrength), transform.localPosition.y);
         });
-        GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic).OnComplete(() => Destroy(gameObject));
+        GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic).OnComplete(() => 
+        {
+            _dialogueAction.Invoke();
+            Destroy(gameObject);
+        });
     }
 
     public void SetSpriteFlip(bool x, bool y)
