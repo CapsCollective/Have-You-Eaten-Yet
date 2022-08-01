@@ -27,6 +27,11 @@ public class DialogueText : MonoBehaviour
         _dialogueView.OnNewRestaurantDialogue += OnNewRestaurantDialogue;
     }
 
+    private void Awake()
+    {
+        DumplingDialogueView.OnNewDumplingDialogue += OnNewRestaurantDialogue;
+    }
+
     private void Start()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
@@ -35,7 +40,8 @@ public class DialogueText : MonoBehaviour
 
     private void OnNewRestaurantDialogue()
     {
-        _dialogueView.OnNewRestaurantDialogue -= OnNewRestaurantDialogue;
+        if(_dialogueView != null)
+            _dialogueView.OnNewRestaurantDialogue -= OnNewRestaurantDialogue;
         if (_startFloat) return;
         _startFloat = true;
 

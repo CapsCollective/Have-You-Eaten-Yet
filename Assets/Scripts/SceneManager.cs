@@ -8,13 +8,14 @@ public class SceneManager : MonoBehaviour
 {
     public static Action<int> OnDumplingsSceneLoad;
     public static Action<int> OnRestaurantSceneLoad;
-    public static int Night = 1; 
+    public static int Night = 1;
     
     public SpriteRenderer fade;
     public GameObject dumplings, restaurant, arrows, menu;
 
     private CameraPan _pan;
 
+    [SerializeField] private int debugNight = 1;
     [SerializeField] private List<GameObject> _restaurantNights = new List<GameObject>();
 
     private void Start()
@@ -24,9 +25,20 @@ public class SceneManager : MonoBehaviour
     }
 
     [Button]
+    public void DebugToRestaurant()
+    {
+        ToRestaurant(debugNight);
+    }
+
+    [Button]
+    public void DebugToDumplings()
+    {
+        ToDumplings(debugNight);
+    }
+
     public void ToDumplings(int night)
     {
-        //Night = night;
+        Night = night;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             _pan.enabled = false;
@@ -39,7 +51,6 @@ public class SceneManager : MonoBehaviour
         });
     }
 
-    [Button]
     public void ToRestaurant(int night)
     {
         // Disable all restaurant scenes before setting the new one up

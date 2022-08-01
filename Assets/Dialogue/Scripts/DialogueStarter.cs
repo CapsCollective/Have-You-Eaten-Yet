@@ -35,7 +35,7 @@ public class DialogueStarter : MonoBehaviour
 
     private void StartDumplingsDialogue(int night)
     {
-        StartTutorialDialogue(night);
+        dumplingDialogueRunner.StartDialogue(dumplingDialogueStarts[night]);
     }
 
     private void StartRestaurantDialogue(int night)
