@@ -3,30 +3,30 @@ tags:
 colorID: 0
 position: -1134,-1978
 ---
-B: Here’s a few containers of food. 
-B: Share them with the other staff. 
-Li: It’s okay, you don’t have to - 
-B: No, I insist. We’re trying to use up everything tonight. 
-B: Otherwise it will all go to waste. 
-Li: Thank you. 
-B: Once we close up, let’s start packing the tables and chairs away. 
-B: Ah. You know it’s funny. It feels very ordinary, tonight. 
-Li: What do you mean? 
-B: I think I imagined the last night of this restaurant would be a big party. 
-B: We’ve been open more than ten years, after all. 
-B: I thought everyone would come and celebrate. 
+Peng: Here’s a few containers of food. 
+Peng: Share them with the other staff. 
+Lila: It’s okay, you don’t have to - 
+Peng: No, I insist. We’re trying to use up everything tonight. 
+Peng: Otherwise it will all go to waste. 
+Lila: Thank you. 
+Peng: Once we close up, let’s start packing the tables and chairs away. 
+Peng: Ah. You know it’s funny. It feels very ordinary, tonight. 
+Lila: What do you mean? 
+Peng: I think I imagined the last night of this restaurant would be a big party. 
+Peng: We’ve been open more than ten years, after all. 
+Peng: I thought everyone would come and celebrate. 
 <<wait 1>>
-Li: Will everything fit in the truck? 
-B: We can do half the furniture in one trip. 
-B: Then we’ll come back later tonight. 
-Li: Are you sure you can handle it yourself? 
-B: The storage facility closes at midnight, which gives us plenty of time. 
-B: Sorry that we’re keeping you back late. 
-B: You should take some more food! Bring some back to your family. 
-Li: Actually… 
-Li: It’s just myself, right now. 
-B: Keep some in the freezer then! 
-Li: No it’s really fine - but thank you though. 
-Li: I’ll help you move some boxes down. It’s the least I can do. 
-B: Ah, thank you. Everyone here is always so kind. I’ll miss it.
+Lila: Will everything fit in the truck? 
+Peng: We can do half the furniture in one trip. 
+Peng: Then we’ll come back later tonight. 
+Lila: Are you sure you can handle it yourself? 
+Peng: The storage facility closes at midnight, which gives us plenty of time. 
+Peng: Sorry that we’re keeping you back late. 
+Peng: You should take some more food! Bring some back to your family. 
+Lila: Actually… 
+Lila: It’s just myself, right now. 
+Peng: Keep some in the freezer then! 
+Lila: No it’s really fine - but thank you though. 
+Lila: I’ll help you move some boxes down. It’s the least I can do. 
+Peng: Ah, thank you. Everyone here is always so kind. I’ll miss it.
 ===

@@ -52,11 +52,11 @@ public class DialogueText : MonoBehaviour
         _startFloat = true;
 
         _startX = transform.localPosition.x;
-        transform.DOMoveY(35, moveTime).SetEase(Ease.InSine).OnUpdate(() =>
+        transform.DOMoveY(35, fadeOutTime).SetEase(Ease.InSine).OnUpdate(() =>
         {
             transform.localPosition = new Vector3(_startX + (Mathf.Sin(_sine) * sineStrength), transform.localPosition.y);
         });
-        GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic).OnComplete(() => _dialogueAction.Invoke());
+        GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic).OnComplete(() => Destroy(gameObject));
     }
 
     public void SetSpriteFlip(bool x, bool y)
