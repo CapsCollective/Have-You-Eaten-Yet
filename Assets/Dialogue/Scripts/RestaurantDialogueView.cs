@@ -60,8 +60,10 @@ public class RestaurantDialogueView : DialogueViewBase
     {
         base.DialogueComplete();
 
+        
         foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
         {
+            kvp.Value.Character.GetComponentInChildren<SpriteRenderer>().DOFade(0, timeToFade);
             kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(0, timeToFade).OnComplete(() =>
             {
                 OnNewRestaurantDialogue?.Invoke();
