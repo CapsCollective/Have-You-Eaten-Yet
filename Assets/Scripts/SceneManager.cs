@@ -16,7 +16,7 @@ public class SceneManager : MonoBehaviour
     private CameraPan _pan;
 
     [SerializeField] private int debugNight = 1;
-    [SerializeField] private List<GameObject> _restaurantNights = new List<GameObject>();
+    [SerializeField] private List<GameObject> restaurantNights = new List<GameObject>();
 
     private void Start()
     {
@@ -54,7 +54,7 @@ public class SceneManager : MonoBehaviour
     public void ToRestaurant(int night)
     {
         // Disable all restaurant scenes before setting the new one up
-        foreach(GameObject g in _restaurantNights)
+        foreach(GameObject g in restaurantNights)
         {
             g.SetActive(false);
         }
@@ -64,7 +64,7 @@ public class SceneManager : MonoBehaviour
         {
             dumplings.SetActive(false);
             restaurant.SetActive(true);
-            _restaurantNights[Night - 1].SetActive(true);
+            restaurantNights[Night - 1].SetActive(true);
             arrows.SetActive(true);
             menu.SetActive(false);
             fade.DOFade(0, 1f).OnComplete(() => { 

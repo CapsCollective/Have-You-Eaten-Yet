@@ -21,9 +21,9 @@ public class RestaurantDialogueView : DialogueViewBase
 
     [SerializeField] private SerializedDictionary<string, DialogueSettings> spawnPositions = new SerializedDictionary<string, DialogueSettings>();
     [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private float timeToWait = 3.0f;
-    [SerializeField] private float timePerCharacter = 0.15f;
-    [SerializeField] private float timeToFade = 5.0f;
+    private const  float timeToWait = 2.8f;
+    private const  float timePerCharacter = 0.05f;
+    private const float timeToFade = 2.0f;
 
     private Coroutine _currentAnimation;
 
@@ -57,14 +57,22 @@ public class RestaurantDialogueView : DialogueViewBase
         );
     }
 
+    public override void DialogueStarted()
+    {
+        base.DialogueStarted();
+        foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
+        {
+            kvp.Value.Character.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0.4f, timeToFade);
+            kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(1, timeToFade);
+        }
+    }
+
     public override void DialogueComplete()
     {
         base.DialogueComplete();
-
-        
         foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
         {
-            kvp.Value.Character.GetComponentInChildren<SpriteRenderer>().DOFade(0, timeToFade);
+            kvp.Value.Character.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0, timeToFade);
             kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(0, timeToFade).OnComplete(() =>
             {
                 OnNewRestaurantDialogue?.Invoke();

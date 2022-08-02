@@ -3,9 +3,10 @@ tags:
 colorID: 0
 position: -930,-1454
 ---
-Brick: God, the kids these days. 
+<<wait 10>>
+Brick: God, the kids these days.
 Lila: Yeah. Tell me about it. 
-Brick: We have “No Skating” signs up everywhere, and yet. 
+Brick: We have “No Skating” signs up everywhere, and yet...
 Brick: I had to confiscate two boards today. 
 Brick: Told them to pick them up tomorrow. 
 <<wait 1>>

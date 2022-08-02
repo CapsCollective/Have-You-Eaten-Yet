@@ -3,19 +3,31 @@ tags:
 colorID: 0
 position: -882,-1324
 ---
-<<wait 5>>
+<<wait 11>>
 Ke: Thanks for the food. I haven’t had any time to cook lately. 
 Ke: With things so busy at work, and with my son… 
 Peng: Is he still sick? 
 Ke: A little better now, but still coughing. 
 Peng: Do you have pears at home? 
 Ke: Pears? 
-Peng: Yeah. The big round yellow ones are best. 
-Peng: Boil them with rock sugar. Add some goji berries if you have them. 
+Peng: Yes, that's right.
+Peng: The big round yellow ones are best… 
+<<wait 6>>
+Peng: Boil them with rock sugar. 
+<<wait 1>>
+Peng: Add some goji berries if you have them. 
 Peng: That will treat the cough. 
+Ke: Hmm?
+<<wait 3>>
 Ke: How does it work? 
+<<wait 1>>
 Peng: I don’t know. But it’s what my parents taught me.
-Peng: And it tastes really good, so your son will like it.  
+Peng: But you can trust me, it works.
+<<wait 2>>
+Peng: And it tastes really good, so your son will like it. 
+<<wait 1>>
 Peng: My mother used to say it was the best part of getting sick! 
-Ke: Thank you. I’ll let you know how it goes.
+Ke: Thank you.
+Ke: I’ll let you know how it goes.
+
 ===

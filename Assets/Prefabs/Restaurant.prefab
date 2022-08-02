@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5001953820530006210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -621,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Night 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8020637359207662572, guid: 2cf70d4187628794b89369c0142993fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8020637359207662573, guid: 2cf70d4187628794b89369c0142993fb, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -679,34 +683,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5001953820737369769}
     m_Modifications:
-    - target: {fileID: 6320853183337435127, guid: 22b074b90bcb8764bbf624237c01ade2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320853183337435127, guid: 22b074b90bcb8764bbf624237c01ade2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320853183337435127, guid: 22b074b90bcb8764bbf624237c01ade2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320853183337435127, guid: 22b074b90bcb8764bbf624237c01ade2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320853183337435127, guid: 22b074b90bcb8764bbf624237c01ade2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320853183337435127, guid: 22b074b90bcb8764bbf624237c01ade2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7842474513320038556, guid: 22b074b90bcb8764bbf624237c01ade2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8294478509533202356, guid: 22b074b90bcb8764bbf624237c01ade2, type: 3}
       propertyPath: m_RootOrder
       value: 7

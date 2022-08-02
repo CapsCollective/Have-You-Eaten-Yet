@@ -461,7 +461,8 @@ MonoBehaviour:
   restaurant: {fileID: 533696406}
   arrows: {fileID: 415395192}
   menu: {fileID: 756824729}
-  _restaurantNights:
+  debugNight: 1
+  restaurantNights:
   - {fileID: 1799052354}
   - {fileID: 1438228270}
   - {fileID: 934587405}
@@ -912,7 +913,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: ToDumplings
+        m_MethodName: ToRestaurant
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1095,18 +1096,6 @@ PrefabInstance:
     - target: {fileID: 5001953820737369769, guid: 5272f437b95b9d142b647cc1a34f4f37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001953821091508046, guid: 5272f437b95b9d142b647cc1a34f4f37, type: 3}
-      propertyPath: startNode
-      value: Night_1_Table_Conversation
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001953821091508046, guid: 5272f437b95b9d142b647cc1a34f4f37, type: 3}
-      propertyPath: startAutomatically
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001953822027033132, guid: 5272f437b95b9d142b647cc1a34f4f37, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5272f437b95b9d142b647cc1a34f4f37, type: 3}

@@ -3,11 +3,12 @@ tags:
 colorID: 0
 position: -1081,-1845
 ---
-Jane: I hope the waiter doesn’t notice me. 
+<<wait 2>>
+Jane: I hope the chef doesn’t notice me. 
 Ken: Which one? 
 Jane: Shh! Not too loud. And don’t look. 
 Ken: Why? What happened? 
-Jane: Well… last time I was here… 
+Jane: Well… last time I was here… a few months back…
 Jane: You know how after you close up on a Thursday and you’re tired, and this place is the last to close… 
 Ken: Yeah? 
 Jane: So I sat down, and the waiter poured me tea and gave me a menu. 
@@ -16,18 +17,15 @@ Jane: And I was embarrassed, so I got up and left.
 <<wait 1>>
 Ken: That’s it? 
 Jane: I was a waste of tea! A tea thief! 
-Ken: How long ago was this? 
-Jane: A few months, I think. 
-Ken: They won’t remember. And if they did, they wouldn’t care. 
-<<wait 1>>
+Ken: You said it was months ago. They won’t remember.
+Ken: And if they did, they wouldn’t care. 
 Jane: What if they do though? 
-Ken: Even if they do. Will they ever bring it up with you? 
-Jane: It would be worse if they did. But it would also be bad if they didn’t! 
 Ken: So what were you going to do, never eat here again? 
 <<wait 1>>
-Jane: Yes! 
+Jane: …Maybe? 
 Ken: That would be so much worse for their business! 
 Jane: I don’t owe them anything! 
-Ken: I’m beginning to see why this problem might have occurred in the first place… 
+Ken: I’m beginning to see why this problem might have occurred in the first place…
+<<wait 1>>
 Jane: Let’s just hurry and finish and get out of here.
 ===

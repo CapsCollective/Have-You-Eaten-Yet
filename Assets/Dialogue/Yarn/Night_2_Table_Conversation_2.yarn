@@ -3,6 +3,7 @@ tags:
 colorID: 0
 position: -1031,-1715
 ---
+<<wait 50>>
 L: Hey, listen closely. 
 L: You need to study hard, otherwise you will be working in a place like this. 
 G: What’s wrong with working here?
