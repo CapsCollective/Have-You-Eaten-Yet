@@ -27,6 +27,8 @@ public class RestaurantDialogueView : DialogueViewBase
 
     private Coroutine _currentAnimation;
 
+    private static int ActiveDialogues;
+
     public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
     {
         if(_currentAnimation != null)
@@ -64,6 +66,7 @@ public class RestaurantDialogueView : DialogueViewBase
         {
             kvp.Value.Character.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0.4f, timeToFade);
             kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(1, timeToFade);
+            ActiveDialogues++;
         }
     }
 
@@ -76,6 +79,7 @@ public class RestaurantDialogueView : DialogueViewBase
             kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(0, timeToFade).OnComplete(() =>
             {
                 OnNewRestaurantDialogue?.Invoke();
+                if (--ActiveDialogues <= 0) Services.Scene.ToDumplings(SceneManager.Night + 1);
             });
         }
     }
