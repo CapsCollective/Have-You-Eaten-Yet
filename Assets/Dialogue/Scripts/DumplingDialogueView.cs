@@ -13,7 +13,8 @@ public class DumplingDialogueView : DialogueViewBase
     
     private const float timeToWait = 1.5f;
     private float timePerCharacter = 0.05f;
-    
+    private const float timeToFade = 2.0f;
+
     [SerializeField] private GameObject optionButton;
     [SerializeField] private Transform optionButtonParent;
     [SerializeField] private CanvasGroup optionButtonCanvasGroup;
@@ -89,13 +90,29 @@ public class DumplingDialogueView : DialogueViewBase
             OnOptionSelected?.Invoke(optionNum);
         });
     }
+    public override void DialogueStarted()
+    {
+        base.DialogueStarted();
+        foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
+        {
+            if (!kvp.Value.Character) continue;
+            kvp.Value.Character.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0.4f, timeToFade);
+            kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(1, timeToFade);
+        }
+    }
 
     public override void DialogueComplete()
     {
         base.DialogueComplete();
         optionButtonCanvasGroup.interactable = false;
-    }
 
+        foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
+        {
+            if (!kvp.Value.Character) continue;
+            kvp.Value.Character.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0, timeToFade);
+        }
+    }
+    
     private void OnDrawGizmosSelected()
     {
         foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)

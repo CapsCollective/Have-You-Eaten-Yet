@@ -6,47 +6,47 @@ position: -731,-908
 B: So yes. That was it. That was how things went.
 B: What did you think about your time here?
 -> It was fun.
-  	B: You don’t have to be courteous.
-   	B: You can say what you really feel.
-   	B: But if you are being honest,
+    B: You don’t have to be courteous.
+    B: You can say what you really feel.
+    B: But if you are being honest,
     B: …
-   	B: Thank you. It makes me glad to hear that.
+    B: Thank you. It makes me glad to hear that.
 -> It was hard, but I learned a lot.
-   	B: That’s good to hear.
+    B: That’s good to hear.
     B: That’s how these things tend to go, after all.
-   	B: I hope you continue to remember it for a long time.  
+    B: I hope you continue to remember it for a long time.  
 -> I hated it.
-   	B: Yes, it was quite bitter, wasn’t it?
-   	B: But not many things in life can be sweet.
-   	B: Even the bitter things become part of us, in the end.
-   	B: So I hope you found something worthwhile in your time here.
+    B: Yes, it was quite bitter, wasn’t it?
+    B: But not many things in life can be sweet.
+    B: Even the bitter things become part of us, in the end.
+    B: So I hope you found something worthwhile in your time here.
 B: It may be some time before we see each other again.
 B: Is there anything you want to ask me?
-…
 ->Why was everyone a ghost?
-   	B: A ghost?
-   	B: Like a dead person?
-   	B: That’s unusual… all this did happen a long time ago…
-   	B: But many of these people are still alive.
-   	B: Maybe you are just remembering it wrong?
+    B: A ghost?
+    B: Like a dead person?
+    B: That’s unusual… all this did happen a long time ago…
+    B: But many of these people are still alive.
+    B: Maybe you are just remembering it wrong?
 ->Did I do well?  
     B: You shouldn’t have to worry about something like that.
     B: Or, perhaps, you would know the answer to that better than me.
     B: But if I had to give an honest answer…
     [if there is a way to check how many dumplings the player made across their playtime]
-		<<if $dumplingsMade > 50>> 
-			B: You made many more than I would have expected.
-		<<elseif $dumplingsMade > 25>>
-			B: You made a decent amount. You held your own quite well. 
-		<<else>>
-			B: You didn't make that many, but I appreciate your help
-		<<endif>>
+        <<if $dumplingsMade > 50>> 
+            B: You made many more than I would have expected.
+        <<elseif $dumplingsMade > 25>>
+            B: You made a decent amount. You held your own quite well. 
+        <<else>>
+            B: You didn't make that many, but I appreciate your help
+        <<endif>>
 ->Did you enjoy your time working here?  
-   	B: You mean me? Did I enjoy myself?
-   	B: Ah let’s see… it made me lose sleep, it made my hair turn gray.
-   	B: It made my hands calloused, my voice hoarse, my ankles sore.
-   	B: But despite all that, these years were good.
-   	B: Yes, I did enjoy myself.
+    B: You mean me? Did I enjoy myself?
+    B: Ah let’s see… it made me lose sleep, it made my hair turn gray.
+    B: It made my hands calloused, my voice hoarse, my ankles sore.
+    B: But despite all that, these years were good.
+    B: Yes, I did enjoy myself.
 B: Once more, thank you for your help.
 B: Until we meet again.
+<<ToMenu MainCamera true>>
 ===

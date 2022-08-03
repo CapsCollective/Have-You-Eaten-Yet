@@ -8,15 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  LastImportHadImplicitStringIDs: 0
-  LastImportHadAnyStrings: 0
-  isSuccessfullyParsed: 0
-  parseErrorMessages:
-  - "Assets/Dialogue/Yarn/Epilogue.yarn: 37:20: Error: Unexpected \"made\" while
-    reading an if clause\r\n    <<if $dumplings made > 50>> \r\r\n                   
-    ^^^^\r\n"
-  - "Assets/Dialogue/Yarn/Epilogue.yarn: 39:6: Error: Unexpected \"else\" while reading
-    a statement\r\n    <<else>>\r\r\n      ^^^^\r\n"
-  - "Assets/Dialogue/Yarn/Epilogue.yarn: 40:24: Error: Unexpected \"made\" while
-    reading an if clause\r\n        <<if $dumplings made > 25>>\r\r\n                       
-    ^^^^\r\n"
+  LastImportHadImplicitStringIDs: 1
+  LastImportHadAnyStrings: 1
+  isSuccessfullyParsed: 1
+  parseErrorMessages: []

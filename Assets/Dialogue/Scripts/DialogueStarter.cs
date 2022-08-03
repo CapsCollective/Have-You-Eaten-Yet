@@ -10,6 +10,7 @@ public class DialogueStarter : MonoBehaviour
     const string RESTAURANT_START = "Start";
 
     [SerializeField] private DialogueRunner dumplingDialogueRunner;
+    [SerializeField] private DialogueRunner epilogueDialogueRunner;
 
     private Dictionary<int, string> dumplingDialogueStarts = new Dictionary<int, string>
     {
@@ -28,8 +29,12 @@ public class DialogueStarter : MonoBehaviour
     private void Awake()
     {
         SceneManager.OnDumplingsSceneLoad += StartDumplingsDialogue;
+        SceneManager.OnEpilogueSceneLoad += StartEpilogueDialogue;
     }
-
+    private void StartEpilogueDialogue()
+    {
+        epilogueDialogueRunner.StartDialogue("Epilogue");
+    }
     private void StartDumplingsDialogue(int night)
     {
         dumplingDialogueRunner.StartDialogue(dumplingDialogueStarts[night]);

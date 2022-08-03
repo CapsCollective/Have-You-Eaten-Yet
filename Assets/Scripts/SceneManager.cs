@@ -9,10 +9,11 @@ public class SceneManager : MonoBehaviour
 {
     public static Action<int> OnDumplingsSceneLoad;
     public static Action<int> OnRestaurantSceneLoad;
+    public static Action OnEpilogueSceneLoad;
     public static int Night = 1;
     
     public SpriteRenderer fade;
-    public GameObject dumplings, restaurant, arrows, menu;
+    public GameObject dumplings, restaurant, epilogue, arrows, menu, openSign, closedSign;
 
     private CameraPan _pan;
 
@@ -37,6 +38,28 @@ public class SceneManager : MonoBehaviour
         ToDumplings(debugNight);
     }
 
+
+    [YarnCommand("ToMenu")]
+    public void ToMenu(bool closed)
+    {
+        fade.DOFade(1, 1f).OnComplete(() =>
+        {
+            _pan.enabled = false;
+            dumplings.SetActive(false);
+            restaurant.SetActive(false);
+            epilogue.SetActive(false);
+            arrows.SetActive(false);
+            menu.SetActive(true);
+            
+            openSign.SetActive(!closed);
+            closedSign.SetActive(closed);
+            
+            transform.position = Vector3.back;
+            fade.DOFade(0, 1f);
+        });
+    }
+    
+    [YarnCommand("ToDumplings")]
     public void ToDumplings(int night)
     {
         Night = night;
@@ -74,6 +97,24 @@ public class SceneManager : MonoBehaviour
             fade.DOFade(0, 1f).OnComplete(() => { 
                 _pan.enabled = true;
                 OnRestaurantSceneLoad?.Invoke(Night);
+            });
+        });
+    }
+    
+    [YarnCommand("ToEpilogue")]
+    public void ToEpilogue()
+    {
+        fade.DOFade(1, 1f).OnComplete(() =>
+        {
+            _pan.enabled = false;
+            dumplings.SetActive(false);
+            restaurant.SetActive(false);
+            epilogue.SetActive(true);
+            arrows.SetActive(false);
+            menu.SetActive(false);
+            fade.DOFade(0, 1f).OnComplete(() => {
+                OnEpilogueSceneLoad?.Invoke();
+                //Services.DialogueStarter.StartTutorialDialogue();
             });
         });
     }

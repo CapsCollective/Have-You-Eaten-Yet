@@ -12,8 +12,27 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: 7ad12b366892a20458e729554dd97a4d, type: 3}
   - {fileID: 6391573757903218779, guid: d20ffc7f2d3d1cf4cafbc0972b123ad3, type: 3}
   - {fileID: 6391573757903218779, guid: 9e4a3b0b89d35bf4d81b479b9c5f6022, type: 3}
+  - {fileID: 6391573757903218779, guid: 4478fdc24af6eb14893c9c1dd03a3229, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $started_tutorial_1
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Minigame_1_Restaurant_Tutorial_Scene.yarn,
+      node Restaurant_tutorial_scene_0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 7ad12b366892a20458e729554dd97a4d, type: 3}
+  - name: $mood
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in Minigame_3_Restaurant_Quiet_Scene.yarn, node
+      Restaurant_quiet_scene
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 9e4a3b0b89d35bf4d81b479b9c5f6022, type: 3}
   defaultLanguage: en-AU
   languagesToSourceAssets: []
   useAddressableAssets: 0
