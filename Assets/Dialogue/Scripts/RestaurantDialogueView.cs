@@ -79,7 +79,9 @@ public class RestaurantDialogueView : DialogueViewBase
             kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(0, timeToFade).OnComplete(() =>
             {
                 OnNewRestaurantDialogue?.Invoke();
-                if (--ActiveDialogues <= 0) Services.Scene.ToDumplings(SceneManager.Night + 1);
+                if (--ActiveDialogues > 0) return;
+                if (SceneManager.Night == 3) Services.Scene.ToEpilogue();
+                else Services.Scene.ToDumplings(SceneManager.Night + 1);
             });
         }
     }

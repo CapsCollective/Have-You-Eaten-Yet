@@ -5,10 +5,11 @@ position: -722,-1046
 ---
 <<SetThrowing WrapperThrower false>>
 <<SetActive MeatBucket false>>
+<<set $dumplings_made to 0>>
 A: Have you made dumplings before?
--> Yes
+-> A little bit...
     A: You should still watch carefully. Everyone does it a little differently. 
--> No 
+-> Nope!
     A: You’ll learn quickly. It’s not difficult. You just have to watch someone else do it first. 
 A: First I'll toss you a wrapper.
 <<SetThrowing WrapperThrower true>>
@@ -16,35 +17,51 @@ A: First I'll toss you a wrapper.
 <<SetActive MeatBucket true>>
 A: Grab a ball of filling from the bowl. Not too much.
 <<if $started_tutorial_1>>
+    <<jump Restaurant_tutorial_scene_1>>
 <<endif>>
 ===
 title: Restaurant_tutorial_scene_1
 position: -715,-961
 ---
 A: Then place it onto your wrapper. 
+<<if $started_tutorial_2>>
+    <<jump Restaurant_tutorial_scene_2>>
+<<endif>>
 ===
 title: Restaurant_tutorial_scene_2
 position: -684,-984
 ---
 A: Pull down from the top of the wrapper to fold it over. Then pull upwards to close it up.
+<<if $started_tutorial_3>>
+    <<jump Restaurant_tutorial_scene_3>>
+<<endif>>
 ===
 title: Restaurant_tutorial_scene_3
 position: -684,-984
 ---
+A: Press down on one side to crimp, then the other.
+<<if $started_tutorial_4>>
+    <<jump Restaurant_tutorial_scene_4>>
+<<endif>>
+===
+title: Restaurant_tutorial_scene_4
+position: -684,-984
+---
 A: Looks good! 
 A: Once they're ready, drag them over to the tray on your right. Try to make neat rows.
+B: I'll take them from there.
 A: Don’t worry about making them look too perfect. 
 A: Once they’re in the pot you won’t be able to tell which ones are yours.
 A: And if you worry too much, you slow down. Can you do that?
--> Yes.
+-> Yep!
 -> I'll try.
 A: Good to hear. 
 A: Try to make a few yourself, now.
-A: Good, you've made $dumplingsMade dumplings. 
+A: Good, you've made {$dumplings_made} dumplings already. 
 A: How are you finding it? 
--> It's easy
+-> It's pretty easy.
     A: It’s good that it's a quiet night. Wait until you're rostered on when it's busy. 
--> It's tricky. 
+-> It's quite tricky. 
     A: Don't worry about shape or speed for now. 
     A: What you want is for your fingers to remember the motions.
     A: Soon you will be able to fold without thinking! 
@@ -53,6 +70,7 @@ B: Yeah you're doing well.
 B: Even if you mess up, just throw it away, don't get flustered. 
 <<wait 3>>
 A: Okay finish up the one you're on.
+<<SetThrowing WrapperThrower false>>
 A: That's enough for today.
 A: Oh, also. After each shift, you'll need to close up shop. 
 A: Some people like to sit around after the kitchen closes. 
@@ -60,5 +78,4 @@ A: You can let them keep talking if you want, or you can shoo them away by clear
 A: I'll leave it to you.
 <<wait 2>>
 <<ToRestaurant MainCamera 1>>
-
 ===

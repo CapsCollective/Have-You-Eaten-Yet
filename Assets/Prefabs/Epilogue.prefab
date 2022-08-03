@@ -33,67 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3439984682122008642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3439984682122008643}
-  - component: {fileID: 3439984682122008652}
-  m_Layer: 0
-  m_Name: Dumpling Dialogue View
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3439984682122008643
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3439984682122008642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3439984683214303218}
-  m_Father: {fileID: 3439984682969697636}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3439984682122008652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3439984682122008642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab9644af8dca8f04694693b0bf834332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPositions:
-    list:
-    - Key: B
-      Value:
-        Position: {x: 25, y: 20}
-        FlipX: 1
-        FlipY: 0
-        Character: {fileID: 8290668633717786006}
-        Font: {fileID: 11400000, guid: 6a9175b787b57f9489b4507093281b8a, type: 2}
-    keyCollision: 0
-  dialogueBox: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
-  optionButton: {fileID: 5653008112683119981, guid: a45e13f19917d6148a6d70c33f72cff8, type: 3}
-  optionButtonParent: {fileID: 3439984682300547420}
-  optionButtonCanvasGroup: {fileID: 3439984683214303219}
-  timeToShowOptions: 1
-  timeToHideOptions: 1
 --- !u!1 &3439984682300547411
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3439984682969697636}
   - component: {fileID: 3439984682969697659}
-  - component: {fileID: 3439984682969697658}
+  - component: {fileID: 1280643401179081324}
   m_Layer: 0
   m_Name: Epilogue Dialogue System
   m_TagString: Untagged
@@ -196,7 +135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3439984682122008643}
+  - {fileID: 3439984683214303218}
   m_Father: {fileID: 3439984681548136736}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -213,9 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yarnProject: {fileID: 7545569452688597077, guid: 2f49fd50105573d46a4a7f359ad3f1be, type: 3}
-  _variableStorage: {fileID: 3439984682969697658}
+  _variableStorage: {fileID: 0}
   dialogueViews:
-  - {fileID: 3439984682122008652}
+  - {fileID: 1280643401179081324}
   startNode: Start
   startAutomatically: 0
   runSelectedOptionAsLine: 0
@@ -233,7 +172,7 @@ MonoBehaviour:
   onCommand:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3439984682969697658
+--- !u!114 &1280643401179081324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,11 +181,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 3439984682969697657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
+  m_Script: {fileID: 11500000, guid: ab9644af8dca8f04694693b0bf834332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showDebug: 0
-  debugTextView: {fileID: 0}
+  spawnPositions:
+    list:
+    - Key: B
+      Value:
+        Position: {x: 25, y: 20}
+        FlipX: 1
+        FlipY: 0
+        Character: {fileID: 8290668633717786006}
+        Font: {fileID: 11400000, guid: 6a9175b787b57f9489b4507093281b8a, type: 2}
+    keyCollision: 0
+  dialogueBoxPrefab: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
+  tray: {fileID: 0}
+  wrapperThrower: {fileID: 0}
+  optionButton: {fileID: 5653008112683119981, guid: a45e13f19917d6148a6d70c33f72cff8, type: 3}
+  optionButtonParent: {fileID: 3439984682300547420}
+  optionButtonCanvasGroup: {fileID: 3439984683214303219}
+  timeToShowOptions: 1
+  timeToHideOptions: 1
 --- !u!1 &3439984683074705497
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +371,7 @@ RectTransform:
   m_Children:
   - {fileID: 3439984682300547420}
   - {fileID: 3439984683074705476}
-  m_Father: {fileID: 3439984682122008643}
+  m_Father: {fileID: 3439984682969697636}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

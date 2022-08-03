@@ -120,81 +120,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3439984682122008642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3439984682122008643}
-  - component: {fileID: 3439984682122008652}
-  m_Layer: 0
-  m_Name: Dumpling Dialogue View
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3439984682122008643
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3439984682122008642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3439984683214303218}
-  m_Father: {fileID: 3439984682969697636}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3439984682122008652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3439984682122008642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab9644af8dca8f04694693b0bf834332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPositions:
-    list:
-    - Key: A
-      Value:
-        Position: {x: -45, y: 25}
-        FlipX: 0
-        FlipY: 1
-        Character: {fileID: 0}
-        Font: {fileID: 0}
-    - Key: B
-      Value:
-        Position: {x: -37, y: 20}
-        FlipX: 0
-        FlipY: 1
-        Character: {fileID: 0}
-        Font: {fileID: 0}
-    - Key: C
-      Value:
-        Position: {x: -37, y: 20}
-        FlipX: 0
-        FlipY: 1
-        Character: {fileID: 0}
-        Font: {fileID: 0}
-    keyCollision: 0
-  dialogueBox: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
-  optionButton: {fileID: 5653008112683119981, guid: a45e13f19917d6148a6d70c33f72cff8, type: 3}
-  optionButtonParent: {fileID: 3439984682300547420}
-  optionButtonCanvasGroup: {fileID: 3439984683214303219}
-  timeToShowOptions: 1
-  timeToHideOptions: 1
 --- !u!1 &3439984682300547411
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,10 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wrapperPrefab: {fileID: 922170031676435568, guid: 8ae8c1e2cca6abd46b5e3a3b290d47a1, type: 3}
   faultyWrapperPrefab: {fileID: 922170031676435568, guid: f9b6dff3f0cce6f45a206eaac1cba85d, type: 3}
-  maxSpawnCount: 3
-  faultyThrowChance: 0.1
-  minDelay: 2
-  maxDelay: 4
 --- !u!1 &3439984682969697657
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,8 +249,9 @@ GameObject:
   - component: {fileID: 3439984682969697636}
   - component: {fileID: 3439984682969697659}
   - component: {fileID: 3439984682969697658}
+  - component: {fileID: 138241977607503594}
   m_Layer: 0
-  m_Name: Dialogue System
+  m_Name: Dumpling Dialogue System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3439984682122008643}
+  - {fileID: 3439984683214303218}
   m_Father: {fileID: 3439984681548136736}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,7 +288,7 @@ MonoBehaviour:
   yarnProject: {fileID: 7545569452688597077, guid: 2f49fd50105573d46a4a7f359ad3f1be, type: 3}
   _variableStorage: {fileID: 3439984682969697658}
   dialogueViews:
-  - {fileID: 3439984682122008652}
+  - {fileID: 138241977607503594}
   startNode: Start
   startAutomatically: 0
   runSelectedOptionAsLine: 0
@@ -398,6 +320,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDebug: 0
   debugTextView: {fileID: 0}
+--- !u!114 &138241977607503594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3439984682969697657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9644af8dca8f04694693b0bf834332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPositions:
+    list:
+    - Key: A
+      Value:
+        Position: {x: -45, y: 25}
+        FlipX: 1
+        FlipY: 1
+        Character: {fileID: 0}
+        Font: {fileID: 11400000, guid: eab35ac05e3f3984da550359c04945b8, type: 2}
+    - Key: B
+      Value:
+        Position: {x: 50, y: 32}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 11400000, guid: 6a9175b787b57f9489b4507093281b8a, type: 2}
+    - Key: C
+      Value:
+        Position: {x: -45, y: 25}
+        FlipX: 1
+        FlipY: 1
+        Character: {fileID: 0}
+        Font: {fileID: 11400000, guid: 764c57f284b9fe64cb2d850d382bc200, type: 2}
+    - Key: D
+      Value:
+        Position: {x: 55, y: -17}
+        FlipX: 0
+        FlipY: 0
+        Character: {fileID: 0}
+        Font: {fileID: 11400000, guid: 2f807dac4d2217748b97920ab364723f, type: 2}
+    keyCollision: 0
+  dialogueBoxPrefab: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
+  tray: {fileID: 4363146627402799321}
+  wrapperThrower: {fileID: 3439984682917033087}
+  optionButton: {fileID: 5653008112683119981, guid: a45e13f19917d6148a6d70c33f72cff8, type: 3}
+  optionButtonParent: {fileID: 3439984682300547420}
+  optionButtonCanvasGroup: {fileID: 3439984683214303219}
+  timeToShowOptions: 1
+  timeToHideOptions: 1
 --- !u!1 &3439984683074705497
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +540,7 @@ RectTransform:
   m_Children:
   - {fileID: 3439984682300547420}
   - {fileID: 3439984683074705476}
-  m_Father: {fileID: 3439984682122008643}
+  m_Father: {fileID: 3439984682969697636}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -719,7 +692,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4163189084267268452, guid: b8f07241434ff094a826032cbb7929de, type: 3}
       propertyPath: m_Name
-      value: Meat bucket
+      value: MeatBucket
       objectReference: {fileID: 0}
     - target: {fileID: 4163189084267268457, guid: b8f07241434ff094a826032cbb7929de, type: 3}
       propertyPath: m_RootOrder

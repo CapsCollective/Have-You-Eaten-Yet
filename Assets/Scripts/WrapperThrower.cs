@@ -11,14 +11,12 @@ public class WrapperThrower : MonoBehaviour
     public static int SpawnedWrappers;
     public static int MaxSpawnCount = 3;
     public static float FaultyThrowChance = 0;
-
+    public static float MinDelay = 2f, MaxDelay = 3f;
     
     [Header("Prefabs")]
     [SerializeField] private GameObject wrapperPrefab;
     [SerializeField] private GameObject faultyWrapperPrefab;
     
-    [Header("Config")]
-    [SerializeField] private float minDelay, maxDelay;
     
     private int _index;
     private float _timer, _delay;
@@ -55,7 +53,7 @@ public class WrapperThrower : MonoBehaviour
         _timer += Time.deltaTime;
         if (_timer < _delay) return;
         _timer = 0;
-        _delay = Random.Range(minDelay, maxDelay);
+        _delay = Random.Range(MinDelay, MaxDelay);
         Throw();
     }
 

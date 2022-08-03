@@ -65,6 +65,8 @@ public class SceneManager : MonoBehaviour
         Night = night;
         WrapperThrower.MaxSpawnCount = night == 1 ? 1 : 3;
         WrapperThrower.FaultyThrowChance = night == 3 ? 0.3f : 0;
+        WrapperThrower.MinDelay = night == 3 ? 4.0f : 2.0f;
+        WrapperThrower.MaxDelay = night == 3 ? 7.0f : 4.0f;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             _pan.enabled = false;

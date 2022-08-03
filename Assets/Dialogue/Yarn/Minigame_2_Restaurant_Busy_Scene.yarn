@@ -3,12 +3,15 @@ tags:
 colorID: 0
 position: -731,-935
 ---
+<<SetActive MeatBucket true>>
 A: Okay. You’ve been doing well these last few weeks. 
-A: But tonight is going to be a challenge. Mid-Autumn festival. Lots of customers. 
+A: But tonight is going to be a challenge. 
+B: Mid-Autumn festival... Lots of customers. 
+<<SetThrowing WrapperThrower true>>
 A: Do you think you can handle it? 
--> Yes 
+-> Bring it on.
     A: That’s good to hear
--> No 
+-> How busy???
     A: I didn’t mean to scare you – it’s just going to be quicker tonight, that’s all. 
 A: I’m going to roll the dough as fast as I can. Try to keep up. 
 <<wait 5>>
@@ -17,8 +20,9 @@ A: How are you managing?
     A: That’s good! 
 -> It’s pretty hard. 
     A: That’s okay. Try to stay focused, ignore us if we’re distracting you. 
-[Dialogue 1]
+<<wait 2>>
 A: It’s good to see you’re getting the rhythm of it. 
+<<wait 1>>
 -> How do you roll the wrappers like that?
     A: Practice. One hand rolls and one hand turns.
     A: You roll halfway to the centre, while you turn the dough with your other hand. 
@@ -36,13 +40,8 @@ A: It’s good to see you’re getting the rhythm of it.
         A: Just about nothing. It’s the same as the day I joined. 
         B: Yeah, from the recipe to the cutlery. All exactly the same. 
         A: They should put us in a museum! 
-->[time out] (The player doesn’t ask anything) 
-	<<wait 4>> 
-A: How are you going? Are you keeping up? 
--> Yeah.
-    A: Good to hear. All the seats are filled up now, so let’s keep up the pace.
-->Actually…
-    A: You’re doing fine. Focus on the work.
+-> ...
+<<wait 6>>
 B: How is your son doing? 
 A: Yes, he was home for dinner last week. But I only see him once a month or so.
 A: He doesn’t cook for himself, always frozen food or take away.
@@ -69,7 +68,7 @@ A: No, I think it’s just how things are lately. Everyone is too busy, no time.
         A: You should learn then. There's no excuse to not be able to cook, I think. 
     -> No 
         B: That's a shame. It's always easier to learn from someone else. 
-->[Time out]
+-> ...
     <<wait 5>>
 A: You know my son keeps telling me I should retire soon.
 B: You should if money isn't an issue.
@@ -77,9 +76,9 @@ A: I think about it sometimes.
 A: But even when I took two weeks off for new year, I was sitting at home and I was bored.
 A: It feels like there’s something wrong. If my hands aren’t doing anything.
 A: Do you know what I mean?
--> Yes
+-> Yeah
     A: Yeah, I hear lots of people have that feeling. 
--> No  
+-> Not really
     B: I'm the same. I'd rather have less to do than more. 
 D: Hey, I’ve been waiting for my food for half an hour now. 
 D: What’s taking so long? 
@@ -87,7 +86,7 @@ D: What’s taking so long?
     D: Alright, but it better.    
 -> Sorry for the wait! 
     D: Well how long will it be? Hurry up, don’t just sulk about it! 
--> *Time-out*  
+-> ... 
     A: Go sit down, food will come shortly!! 
 B: Don't let him distract you. I’ll go talk to him.  
 A: Make sure we serve him last. 
@@ -97,13 +96,15 @@ A: It’s good to work in the back of house. Less dealing with customers.
 A: But I know waiters who love their job too. 
 A: We don’t get to see anyone’s happy face when they receive their food. 
 A: What would you prefer? 
-->I like talking with the customers.
+-> I kinda like talking with the customers.
     A: You must be good with people then. 
     A: We see the best and the worst of people, working here. 
-->I would rather have my own space.  
+-> I would rather have my own space.  
     A: That’s how I feel. 
     A: If you find a good team, you can trust others to treat you nicely. 
     A: But with customers, you never know if they will be kind or cruel. 
 <<wait 3>>
 A: Okay that’s enough. The orders are wrapping up. Great work today!
+<<wait 2>>
+<<ToRestaurant MainCamera 2>>
 ===

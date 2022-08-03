@@ -14,6 +14,8 @@ public class Wrapper : MonoBehaviour
     [SerializeField] private Collider2D leftFoldArea, rightFoldArea;
     [SerializeField] private bool isFaulty;
 
+    public static int DumplingsMade;
+
     private bool _folded;
     private bool _tilted;
     private bool _leftFolded;
@@ -71,6 +73,7 @@ public class Wrapper : MonoBehaviour
         if (!_folded) return;
         _animator.Play("Tilt Up");
         _tilted = true;
+        Services.DialogueStarter.StartTutorialDialogue(3);
     }
     
     private void FoldRight()
@@ -86,6 +89,13 @@ public class Wrapper : MonoBehaviour
         if (!_tilted || _leftFolded) return;
         _animator.Play(_rightFolded ? "Close Left" : "Fold Left");
         _leftFolded = true;
-        if (_rightFolded) _dragAndDrop.enabled = true;
+        if (_rightFolded) Complete();
+    }
+
+    private void Complete()
+    {
+        Services.DialogueStarter.StartTutorialDialogue(4);
+        _dragAndDrop.enabled = true;
+        Services.DialogueStorage.SetValue("$dumplings_made", ++DumplingsMade);
     }
 }

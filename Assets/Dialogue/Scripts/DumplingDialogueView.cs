@@ -9,10 +9,11 @@ public class DumplingDialogueView : DialogueViewBase
     public static Action OnNewDumplingDialogue;
 
     [SerializeField] private SerializedDictionary<string, DialogueSettings> spawnPositions = new SerializedDictionary<string, DialogueSettings>();
-    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject dialogueBoxPrefab;
+    [SerializeField] private Transform tray, wrapperThrower;
     
-    private const float timeToWait = 1.5f;
-    private float timePerCharacter = 0.05f;
+    private const float timeToWait = 1.0f;
+    private float timePerCharacter = 0.03f;
     private const float timeToFade = 2.0f;
 
     [SerializeField] private GameObject optionButton;
@@ -34,9 +35,10 @@ public class DumplingDialogueView : DialogueViewBase
 
         OnNewDumplingDialogue?.Invoke();
         DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
-        Transform box = Instantiate(dialogueBox, transform).transform;
+        Transform box = Instantiate(dialogueBoxPrefab, transform).transform;
         DialogueText dialogue = box.GetComponent<DialogueText>();
         dialogue.Setup(this);
+        dialogue.SetFont(dialogueSettings.Font);
         dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
         dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
         dialogue.HookAction(onDialogueLineFinished);
@@ -54,12 +56,6 @@ public class DumplingDialogueView : DialogueViewBase
 
     public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
     {
-        // cleanup old options
-        foreach(Transform t in optionButtonParent.transform)
-        {
-            Destroy(t.gameObject);
-        }
-
         // create new ones
         foreach(DialogueOption option in dialogueOptions)
         {
@@ -74,7 +70,7 @@ public class DumplingDialogueView : DialogueViewBase
 
         OptionButton CreateButton(DialogueOption option)
         {
-            var button = Instantiate(optionButton,optionButtonParent).GetComponent<OptionButton>();
+            var button = Instantiate(optionButton, optionButtonParent).GetComponent<OptionButton>();
             button.SetupButton(option);
             button.transform.localScale = Vector3.one;
             button.OnOptionSelected = OptionWasSelected;
@@ -88,6 +84,11 @@ public class DumplingDialogueView : DialogueViewBase
         optionButtonCanvasGroup.DOFade(0, timeToHideOptions).OnComplete(() =>
         {
             OnOptionSelected?.Invoke(optionNum);
+            // cleanup old options
+            foreach(Transform t in optionButtonParent)
+            {
+                Destroy(t.gameObject);
+            }
         });
     }
     public override void DialogueStarted()
@@ -105,7 +106,12 @@ public class DumplingDialogueView : DialogueViewBase
     {
         base.DialogueComplete();
         optionButtonCanvasGroup.interactable = false;
-
+        
+        foreach (Transform t in wrapperThrower) Destroy(t.gameObject);
+        foreach (Transform t in tray) Destroy(t.GetComponent<DropTarget>().dropped);
+        WrapperThrower.SpawnedWrappers = 0;
+        Tray.PlacedDumplings = 0;
+        
         foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
         {
             if (!kvp.Value.Character) continue;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tray : MonoBehaviour
 {
-   private int _placedDumplings = 0;
+   public static int PlacedDumplings = 0;
    [SerializeField] private List<DropTarget> targets;
    
    private void Start()
@@ -16,8 +16,8 @@ public class Tray : MonoBehaviour
    {
       if (type != DraggableType.Dumpling) return;
       WrapperThrower.SpawnedWrappers--;
-      if (++_placedDumplings < 4) return;
-      _placedDumplings = 0;
+      if (++PlacedDumplings < 4) return;
+      PlacedDumplings = 0;
       transform.DOMove(new Vector3(110, -12, 0), 1f).OnComplete(() =>
       {
          foreach (DropTarget target in targets) Destroy(target.dropped);

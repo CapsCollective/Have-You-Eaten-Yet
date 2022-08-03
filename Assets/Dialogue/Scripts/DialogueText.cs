@@ -9,12 +9,14 @@ public class DialogueText : MonoBehaviour
     [SerializeField] private Sprite downArrowSprite, upArrowSprite;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private Image boxImage;
-    [SerializeField] private float moveTime = 10;
     [SerializeField] private float fadeInTime = 1.0f;
-    [SerializeField] private float fadeOutTime = 3.0f;
     [SerializeField] private float sineStrength = 3.0f;
     [SerializeField] private float sineFrequency = 1.0f;
-
+    
+    private const float DumplingFadeOutTime = 1.5f;
+    private const float RestaurantFadeOutTime = 3.0f;
+    private bool _inRestaurant;
+    
     private bool _startFloat;
     private float _sine;
     private float _startX;
@@ -22,15 +24,19 @@ public class DialogueText : MonoBehaviour
     private RestaurantDialogueView _dialogueView;
     private Action _dialogueAction;
 
+    
+    
     public void Setup(RestaurantDialogueView dv)
     {
         _dialogueView = dv;
         _dialogueView.OnNewRestaurantDialogue += OnNewDialogue;
+        _inRestaurant = true;
     }
     
     public void Setup(DumplingDialogueView dv)
     {
         DumplingDialogueView.OnNewDumplingDialogue += OnNewDialogue;
+        _inRestaurant = false;
     }
     
     public void HookAction(Action onDialogueFinished)
@@ -52,8 +58,8 @@ public class DialogueText : MonoBehaviour
         _startFloat = true;
 
         _startX = transform.localPosition.x;
-        transform.DOMoveY(35, fadeOutTime).SetEase(Ease.InSine).OnUpdate(() =>
-        {
+        float fadeOutTime = _inRestaurant ? RestaurantFadeOutTime : DumplingFadeOutTime;
+        transform.DOMoveY(35, fadeOutTime).SetEase(Ease.InSine).OnUpdate(() => {
             transform.localPosition = new Vector3(_startX + (Mathf.Sin(_sine) * sineStrength), transform.localPosition.y);
         });
         GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic).OnComplete(() => 
