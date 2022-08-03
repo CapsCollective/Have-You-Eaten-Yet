@@ -10,9 +10,10 @@ public class DumplingDialogueView : DialogueViewBase
 
     [SerializeField] private SerializedDictionary<string, DialogueSettings> spawnPositions = new SerializedDictionary<string, DialogueSettings>();
     [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private float timeToWait = 3.0f;
-    [SerializeField] private float timePerCharacter = 0.15f;
-    [SerializeField] private float timeToFade = 5.0f;
+    
+    private const float timeToWait = 1.5f;
+    private float timePerCharacter = 0.05f;
+    
     [SerializeField] private GameObject optionButton;
     [SerializeField] private Transform optionButtonParent;
     [SerializeField] private CanvasGroup optionButtonCanvasGroup;
@@ -34,12 +35,14 @@ public class DumplingDialogueView : DialogueViewBase
         DialogueSettings dialogueSettings = spawnPositions[dialogueLine.CharacterName];
         Transform box = Instantiate(dialogueBox, transform).transform;
         DialogueText dialogue = box.GetComponent<DialogueText>();
+        dialogue.Setup(this);
         dialogue.SetText(dialogueLine.TextWithoutCharacterName.Text);
         dialogue.SetSpriteFlip(dialogueSettings.FlipX, dialogueSettings.FlipY);
         dialogue.HookAction(onDialogueLineFinished);
         
         if(dialogueSettings.Character != null) box.SetParent(dialogueSettings.Character.transform);
         box.localPosition = dialogueSettings.Position;
+        box.GetComponentInChildren<Hover>().enabled = true;
 
         _currentAnimation = null;
         _currentAnimation = this.RunText(dialogueLine.TextWithoutCharacterName.Text, timePerCharacter, timeToWait, (i) =>
@@ -70,9 +73,8 @@ public class DumplingDialogueView : DialogueViewBase
 
         OptionButton CreateButton(DialogueOption option)
         {
-            var button = Instantiate(optionButton).GetComponent<OptionButton>();
+            var button = Instantiate(optionButton,optionButtonParent).GetComponent<OptionButton>();
             button.SetupButton(option);
-            button.transform.SetParent(optionButtonParent);
             button.transform.localScale = Vector3.one;
             button.OnOptionSelected = OptionWasSelected;
 
@@ -91,16 +93,7 @@ public class DumplingDialogueView : DialogueViewBase
     public override void DialogueComplete()
     {
         base.DialogueComplete();
-
         optionButtonCanvasGroup.interactable = false;
-        foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
-        {
-            if (kvp.Value.Character == null) break;
-            kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(0, timeToFade).OnComplete(() =>
-            {
-                OnNewDumplingDialogue?.Invoke();
-            });
-        }
     }
 
     private void OnDrawGizmosSelected()

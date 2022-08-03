@@ -60,6 +60,7 @@ public class DragAndDrop : MonoBehaviour
                 target.SetParent(snapTarget);
                 target.position = snapTarget.position;
                 OnPlaced?.Invoke(type);
+                if (type == DraggableType.MeatBall) Services.DialogueStarter.StartTutorialDialogue(2);
             }
         }
         

@@ -2,18 +2,20 @@ using System.Collections.Generic;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
+using Yarn.Unity;
 using Random = UnityEngine.Random;
 
 public class WrapperThrower : MonoBehaviour
 {
+    public static bool ThrowWrappers = false;
     public static int SpawnedWrappers;
+    public static int MaxSpawnCount = 3;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject wrapperPrefab;
     [SerializeField] private GameObject faultyWrapperPrefab;
     
     [Header("Config")]
-    [SerializeField] private int maxSpawnCount = 3;
     [Range(0, 1)] [SerializeField] private float faultyThrowChance;
     [SerializeField] private float minDelay, maxDelay;
     
@@ -34,6 +36,8 @@ public class WrapperThrower : MonoBehaviour
 
     [Button] private void Throw()
     {
+        if (!ThrowWrappers) return;
+        
         bool throwFaulty = Random.Range(0f, 1f) < faultyThrowChance;
         Transform wrapper = Instantiate(throwFaulty ? faultyWrapperPrefab : wrapperPrefab, transform).transform;
         Vector3 targetPos = _positions[_index % _positions.Count];
@@ -46,11 +50,18 @@ public class WrapperThrower : MonoBehaviour
 
     private void Update()
     {
-        if (SpawnedWrappers >= maxSpawnCount) return;
+        if (SpawnedWrappers >= MaxSpawnCount) return;
         _timer += Time.deltaTime;
         if (_timer < _delay) return;
         _timer = 0;
         _delay = Random.Range(minDelay, maxDelay);
         Throw();
+    }
+
+    [YarnCommand("SetThrowing")]
+    private void SetThrowing(bool throwing)
+    {
+        ThrowWrappers = throwing;
+        FindObjectOfType<SpawnOnClick>().enabled = throwing;
     }
 }

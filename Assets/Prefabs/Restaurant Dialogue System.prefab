@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7854676928205013249}
   - component: {fileID: 7854676928205013279}
-  - component: {fileID: 7854676928205013248}
   - component: {fileID: 6891631611170345080}
   m_Layer: 0
   m_Name: Restaurant Dialogue System
@@ -47,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yarnProject: {fileID: 7545569452688597077, guid: 11d7a35d0a923c84ab6700c7870cf3a1, type: 3}
-  _variableStorage: {fileID: 7854676928205013248}
+  _variableStorage: {fileID: 0}
   dialogueViews:
   - {fileID: 6891631611170345080}
   startNode: Start
@@ -67,20 +66,6 @@ MonoBehaviour:
   onCommand:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7854676928205013248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7854676928205013250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showDebug: 0
-  debugTextView: {fileID: 0}
 --- !u!114 &6891631611170345080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +180,3 @@ MonoBehaviour:
         Font: {fileID: 11400000, guid: 6a9175b787b57f9489b4507093281b8a, type: 2}
     keyCollision: 0
   dialogueBox: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
-  timeToWait: 3
-  timePerCharacter: 0.05
-  timeToFade: 1

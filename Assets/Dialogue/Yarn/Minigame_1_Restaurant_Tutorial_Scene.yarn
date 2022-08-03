@@ -3,34 +3,36 @@ tags:
 colorID: 0
 position: -722,-1046
 ---
+<<SetThrowing WrapperThrower false>>
+<<SetActive MeatBucket false>>
 A: Have you made dumplings before?
 -> Yes
     A: You should still watch carefully. Everyone does it a little differently. 
 -> No 
     A: You’ll learn quickly. It’s not difficult. You just have to watch someone else do it first. 
-<<Wait 1>>
 A: First I'll toss you a wrapper.
+<<SetThrowing WrapperThrower true>>
+<<wait 2>>
+<<SetActive MeatBucket true>>
+A: Grab a ball of filling from the bowl. Not too much.
+<<if $started_tutorial_1>>
+<<endif>>
 ===
 title: Restaurant_tutorial_scene_1
-position: -731,-915
----
-A: Grab a ball of filling from the bowl. Not too much. 
-===
-title: Restaurant_tutorial_scene_2
 position: -715,-961
 ---
 A: Then place it onto your wrapper. 
 ===
-title: Restaurant_tutorial_scene_3
+title: Restaurant_tutorial_scene_2
 position: -684,-984
 ---
 A: Pull down from the top of the wrapper to fold it over. Then pull upwards to close it up.
 ===
-title: Restaurant_tutorial_scene_4
+title: Restaurant_tutorial_scene_3
 position: -684,-984
 ---
 A: Looks good! 
-A: Once they're ready, drag them over to the tray on your right. 
+A: Once they're ready, drag them over to the tray on your right. Try to make neat rows.
 A: Don’t worry about making them look too perfect. 
 A: Once they’re in the pot you won’t be able to tell which ones are yours.
 A: And if you worry too much, you slow down. Can you do that?
@@ -56,4 +58,7 @@ A: Oh, also. After each shift, you'll need to close up shop.
 A: Some people like to sit around after the kitchen closes. 
 A: You can let them keep talking if you want, or you can shoo them away by clearing their table.
 A: I'll leave it to you.
+<<wait 2>>
+<<ToRestaurant MainCamera 1>>
+
 ===

@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
+using Yarn;
 using Yarn.Unity;
 
 public class Services : MonoBehaviour
 {
-    public static InMemoryVariableStorage Dialogue;
+    public static InMemoryVariableStorage DialogueStorage;
+    public static DialogueStarter DialogueStarter;
     public static SceneManager Scene;
+
+    [SerializeField] private InMemoryVariableStorage storage;
 
     private void Awake()
     {
-        Dialogue = FindObjectOfType<InMemoryVariableStorage>();
+        DialogueStorage = storage;
+        DialogueStarter = FindObjectOfType<DialogueStarter>();
         Scene = FindObjectOfType<SceneManager>();
     }
 }

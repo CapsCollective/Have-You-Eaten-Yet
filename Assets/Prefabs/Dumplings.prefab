@@ -99,7 +99,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3439984681548136736
 Transform:
   m_ObjectHideFlags: 0
@@ -169,6 +169,20 @@ MonoBehaviour:
     list:
     - Key: A
       Value:
+        Position: {x: -45, y: 25}
+        FlipX: 0
+        FlipY: 1
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: B
+      Value:
+        Position: {x: -37, y: 20}
+        FlipX: 0
+        FlipY: 1
+        Character: {fileID: 0}
+        Font: {fileID: 0}
+    - Key: C
+      Value:
         Position: {x: -37, y: 20}
         FlipX: 0
         FlipY: 1
@@ -176,9 +190,6 @@ MonoBehaviour:
         Font: {fileID: 0}
     keyCollision: 0
   dialogueBox: {fileID: 8149807603975952072, guid: a70077799346fad429318a4becafe4b2, type: 3}
-  timeToWait: 3
-  timePerCharacter: 0.05
-  timeToFade: 5
   optionButton: {fileID: 5653008112683119981, guid: a45e13f19917d6148a6d70c33f72cff8, type: 3}
   optionButtonParent: {fileID: 3439984682300547420}
   optionButtonCanvasGroup: {fileID: 3439984683214303219}
@@ -267,7 +278,7 @@ GameObject:
   - component: {fileID: 3439984682917033087}
   - component: {fileID: 3439984682917033086}
   m_Layer: 0
-  m_Name: Wrapper Thrower
+  m_Name: WrapperThrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

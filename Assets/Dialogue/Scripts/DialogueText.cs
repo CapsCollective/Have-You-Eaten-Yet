@@ -20,22 +20,22 @@ public class DialogueText : MonoBehaviour
     private float _startX;
     private CanvasGroup _canvasGroup;
     private RestaurantDialogueView _dialogueView;
-    private System.Action _dialogueAction;
+    private Action _dialogueAction;
 
     public void Setup(RestaurantDialogueView dv)
     {
         _dialogueView = dv;
-        _dialogueView.OnNewRestaurantDialogue += OnNewRestaurantDialogue;
+        _dialogueView.OnNewRestaurantDialogue += OnNewDialogue;
     }
-
+    
+    public void Setup(DumplingDialogueView dv)
+    {
+        DumplingDialogueView.OnNewDumplingDialogue += OnNewDialogue;
+    }
+    
     public void HookAction(Action onDialogueFinished)
     {
         _dialogueAction = onDialogueFinished;
-    }
-
-    private void Awake()
-    {
-        DumplingDialogueView.OnNewDumplingDialogue += OnNewRestaurantDialogue;
     }
 
     private void Start()
@@ -44,10 +44,10 @@ public class DialogueText : MonoBehaviour
         _canvasGroup.DOFade(1, fadeInTime);
     }
 
-    private void OnNewRestaurantDialogue()
+    private void OnNewDialogue()
     {
         if(_dialogueView != null)
-            _dialogueView.OnNewRestaurantDialogue -= OnNewRestaurantDialogue;
+            _dialogueView.OnNewRestaurantDialogue -= OnNewDialogue;
         if (_startFloat) return;
         _startFloat = true;
 

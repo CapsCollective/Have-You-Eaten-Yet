@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
+using Yarn.Unity;
 
 public class SceneManager : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class SceneManager : MonoBehaviour
     public void ToDumplings(int night)
     {
         Night = night;
+        WrapperThrower.MaxSpawnCount = night == 1 ? 1 : 3;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             _pan.enabled = false;
@@ -51,6 +53,7 @@ public class SceneManager : MonoBehaviour
         });
     }
 
+    [YarnCommand("ToRestaurant")]
     public void ToRestaurant(int night)
     {
         // Disable all restaurant scenes before setting the new one up

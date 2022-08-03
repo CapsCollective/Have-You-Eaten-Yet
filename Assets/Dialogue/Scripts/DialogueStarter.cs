@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
@@ -11,7 +10,6 @@ public class DialogueStarter : MonoBehaviour
     const string RESTAURANT_START = "Start";
 
     [SerializeField] private DialogueRunner dumplingDialogueRunner;
-    [SerializeField] private DialogueRunner restauarantDialogueRunner;
 
     private Dictionary<int, string> dumplingDialogueStarts = new Dictionary<int, string>
     {
@@ -30,7 +28,6 @@ public class DialogueStarter : MonoBehaviour
     private void Awake()
     {
         SceneManager.OnDumplingsSceneLoad += StartDumplingsDialogue;
-        SceneManager.OnRestaurantSceneLoad += StartRestaurantDialogue;
     }
 
     private void StartDumplingsDialogue(int night)
@@ -38,19 +35,12 @@ public class DialogueStarter : MonoBehaviour
         dumplingDialogueRunner.StartDialogue(dumplingDialogueStarts[night]);
     }
 
-    private void StartRestaurantDialogue(int night)
-    {
-        //var dialogues = restaurantDialogueStarts[night];
-        //foreach (string d in dialogues) 
-        //{
-        //    DialogueRunner newDr = Instantiate(restauarantDialogueRunner, restauarantDialogueRunner.transform.parent);
-        //    newDr.StartDialogue(d);
-        //}
-    }
-
     public void StartTutorialDialogue(int part)
     {
-        dumplingDialogueRunner.StartDialogue($"Restaurant_tutorial_scene_{part}");
+        Services.DialogueStorage.TryGetValue($"$started_tutorial_{part}", out bool started);
+        if (started) return;
+        Services.DialogueStorage.SetValue($"$started_tutorial_{part}", true);
+        if (!dumplingDialogueRunner.IsDialogueRunning) dumplingDialogueRunner.StartDialogue($"Restaurant_tutorial_scene_{part}");
     }
 
 #if UNITY_EDITOR
