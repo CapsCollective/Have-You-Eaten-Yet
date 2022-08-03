@@ -10,13 +10,14 @@ public class WrapperThrower : MonoBehaviour
     public static bool ThrowWrappers = false;
     public static int SpawnedWrappers;
     public static int MaxSpawnCount = 3;
+    public static float FaultyThrowChance = 0;
 
+    
     [Header("Prefabs")]
     [SerializeField] private GameObject wrapperPrefab;
     [SerializeField] private GameObject faultyWrapperPrefab;
     
     [Header("Config")]
-    [Range(0, 1)] [SerializeField] private float faultyThrowChance;
     [SerializeField] private float minDelay, maxDelay;
     
     private int _index;
@@ -38,7 +39,7 @@ public class WrapperThrower : MonoBehaviour
     {
         if (!ThrowWrappers) return;
         
-        bool throwFaulty = Random.Range(0f, 1f) < faultyThrowChance;
+        bool throwFaulty = Random.Range(0f, 1f) < FaultyThrowChance;
         Transform wrapper = Instantiate(throwFaulty ? faultyWrapperPrefab : wrapperPrefab, transform).transform;
         Vector3 targetPos = _positions[_index % _positions.Count];
         wrapper.DOMove(targetPos, 1f);
