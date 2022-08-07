@@ -13,6 +13,7 @@ public class DialogueSettings
     public bool FlipY;
     public GameObject Character;
     public TMP_FontAsset Font;
+    public Sprite FadeOutSprite, FadeOutBackingSprite;
 }
 
 public class RestaurantDialogueView : DialogueViewBase
@@ -75,8 +76,24 @@ public class RestaurantDialogueView : DialogueViewBase
         base.DialogueComplete();
         foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
         {
-            kvp.Value.Character.transform.GetChild(0).GetComponent<SpriteRenderer>().DOFade(0, timeToFade);
-            kvp.Value.Character.GetComponent<SpriteRenderer>().DOFade(0, timeToFade).OnComplete(() =>
+            if (!kvp.Value.Character) return;
+            SpriteRenderer backingSprite = kvp.Value.Character.transform.GetChild(0).GetComponent<SpriteRenderer>();
+            SpriteRenderer sprite = kvp.Value.Character.GetComponent<SpriteRenderer>();
+
+            backingSprite.sprite = kvp.Value.FadeOutBackingSprite;
+            sprite.sprite = kvp.Value.FadeOutSprite;
+
+            backingSprite.flipX = true;
+            sprite.flipX = true;
+            
+            sprite.GetComponent<Hover>().enabled = false;
+            sprite.transform.DOMoveX(sprite.transform.position.x - 3, timeToFade);
+
+            sprite.sortingLayerName = "UI";
+            backingSprite.sortingLayerName = "UI";
+            
+            backingSprite.DOFade(0, timeToFade);
+            sprite.DOFade(0, timeToFade).OnComplete(() =>
             {
                 OnNewRestaurantDialogue?.Invoke();
                 if (--ActiveDialogues > 0) return;

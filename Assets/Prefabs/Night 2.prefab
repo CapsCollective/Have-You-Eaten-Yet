@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afad3f3468550de4aab55e561134cedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerToParent: 0
   amplitude: 1
 --- !u!1 &8294478509357701894
 GameObject:
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afad3f3468550de4aab55e561134cedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerToParent: 0
   amplitude: 1
 --- !u!1 &8294478509449389005
 GameObject:
@@ -504,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afad3f3468550de4aab55e561134cedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerToParent: 0
   amplitude: 1
 --- !u!1 &8294478509563794413
 GameObject:
@@ -771,6 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afad3f3468550de4aab55e561134cedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerToParent: 0
   amplitude: 1
 --- !u!1 &8294478510798000614
 GameObject:
@@ -870,6 +874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afad3f3468550de4aab55e561134cedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerToParent: 0
   amplitude: 1
 --- !u!1 &8294478510802074534
 GameObject:
@@ -969,6 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afad3f3468550de4aab55e561134cedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerToParent: 0
   amplitude: 1
 --- !u!1 &8294478510858637341
 GameObject:
@@ -1285,6 +1291,22 @@ PrefabInstance:
       propertyPath: spawnPositions.list.Array.data[8].Value.Position.x
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[0].Value.FadeOutSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4139b00590945c44cb6566c281f2eb65, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[1].Value.FadeOutSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b08d4c919c3aa08499f9291c17ce5e0e, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[0].Value.FadeOutBackingSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ce0c0ecfca8a24945907d9451917fe7a, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[1].Value.FadeOutBackingSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 279dc25f59a3f8e459baab1f51177679, type: 3}
     - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1615,6 +1637,22 @@ PrefabInstance:
       propertyPath: spawnPositions.list.Array.data[11].Value.Position.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[0].Value.FadeOutSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: db5b763fea8292f48adf205efca470c0, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[1].Value.FadeOutSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9881a7918d7fb5346b9e230fc71f67e5, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[0].Value.FadeOutBackingSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f8768a657d204d4790a3c76035debca, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[1].Value.FadeOutBackingSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fc420be3106dcb43818be013b9aa493, type: 3}
     - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1945,6 +1983,22 @@ PrefabInstance:
       propertyPath: spawnPositions.list.Array.data[11].Value.Position.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[0].Value.FadeOutSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8bea2b8ca55b74b43b761040c93d7afb, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[1].Value.FadeOutSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 10ade0fdc4c61674ca589fdaf1861b6a, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[0].Value.FadeOutBackingSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f84b31a0db9ccf4d947c715405b7b84, type: 3}
+    - target: {fileID: 6891631611170345080, guid: 84680a525630bd34d829246edb896a10, type: 3}
+      propertyPath: spawnPositions.list.Array.data[1].Value.FadeOutBackingSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a197571ba49b80d4980f2aa908b0c365, type: 3}
     - target: {fileID: 7854676928205013249, guid: 84680a525630bd34d829246edb896a10, type: 3}
       propertyPath: m_RootOrder
       value: 6

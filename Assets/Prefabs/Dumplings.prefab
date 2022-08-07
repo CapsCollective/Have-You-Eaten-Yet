@@ -357,7 +357,7 @@ MonoBehaviour:
         Font: {fileID: 11400000, guid: 764c57f284b9fe64cb2d850d382bc200, type: 2}
     - Key: D
       Value:
-        Position: {x: 55, y: -17}
+        Position: {x: -55, y: -17}
         FlipX: 0
         FlipY: 0
         Character: {fileID: 0}

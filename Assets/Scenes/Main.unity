@@ -1158,7 +1158,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: ToDumplings
+        m_MethodName: ToRestaurant
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
