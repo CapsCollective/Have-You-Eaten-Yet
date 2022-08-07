@@ -27,6 +27,7 @@ public class OptionButton : Selectable, ISubmitHandler, IPointerClickHandler
     public void SubmitOption()
     {
         OnOptionSelected?.Invoke(Option.DialogueOptionID);
+        interactable = false;
     }
 
     public void SetupButton(DialogueOption option)

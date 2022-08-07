@@ -15,6 +15,9 @@ public class DialogueText : MonoBehaviour
     
     private const float DumplingFadeOutTime = 1.5f;
     private const float RestaurantFadeOutTime = 3.0f;
+    private const float DumplingFadeOutDistance = 5f;
+    private const float RestaurantFadeOutDistance = 35f;
+
     private bool _inRestaurant;
     
     private bool _startFloat;
@@ -23,7 +26,7 @@ public class DialogueText : MonoBehaviour
     private CanvasGroup _canvasGroup;
     private RestaurantDialogueView _dialogueView;
     private Action _dialogueAction;
-
+    private bool _flipY;
     
     
     public void Setup(RestaurantDialogueView dv)
@@ -58,8 +61,9 @@ public class DialogueText : MonoBehaviour
         _startFloat = true;
 
         _startX = transform.localPosition.x;
+        float fadeOutDistance = (_flipY ? -1 : 1) * (_inRestaurant ? RestaurantFadeOutDistance : DumplingFadeOutDistance);
         float fadeOutTime = _inRestaurant ? RestaurantFadeOutTime : DumplingFadeOutTime;
-        transform.DOMoveY(35, fadeOutTime).SetEase(Ease.InSine).OnUpdate(() => {
+        transform.DOLocalMoveY(fadeOutDistance, fadeOutTime).SetEase(Ease.InSine).OnUpdate(() => {
             transform.localPosition = new Vector3(_startX + (Mathf.Sin(_sine) * sineStrength), transform.localPosition.y);
         });
         GetComponent<CanvasGroup>().DOFade(0, fadeOutTime).SetEase(Ease.InCubic).OnComplete(() => 
@@ -75,6 +79,7 @@ public class DialogueText : MonoBehaviour
         text.transform.localScale = new Vector3(x ? -1 : 1, 1, 1);
         boxImage.sprite = y ? upArrowSprite : downArrowSprite;
         text.margin = new Vector4(0, y ? 4 : 0, 0, y ? 0 : 4);
+        _flipY = y;
     }
 
     public void SetText(string t)
@@ -90,7 +95,7 @@ public class DialogueText : MonoBehaviour
     public void Update()
     {
         if(_startFloat)
-            _sine += Time.deltaTime * sineFrequency;
+            _sine += Time.deltaTime * 8 / (_inRestaurant ? RestaurantFadeOutTime : DumplingFadeOutTime);
     }
 
     public void RevealText(int pos)

@@ -20,6 +20,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private int debugNight = 1;
     [SerializeField] private List<GameObject> restaurantNights = new List<GameObject>();
 
+    private bool _transitioning;
+    
     private void Start()
     {
         _pan = GetComponent<CameraPan>();
@@ -42,8 +44,12 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("ToMenu")]
     public void ToMenu(bool closed)
     {
+        if (_transitioning) return;
+        _transitioning = true;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
+            _transitioning = false;
+
             _pan.enabled = false;
             dumplings.SetActive(false);
             restaurant.SetActive(false);
@@ -62,6 +68,8 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("ToDumplings")]
     public void ToDumplings(int night)
     {
+        if (_transitioning) return;
+        _transitioning = true;
         Night = night;
         WrapperThrower.MaxSpawnCount = night == 1 ? 1 : 3;
         WrapperThrower.FaultyThrowChance = night == 3 ? 0.3f : 0;
@@ -69,6 +77,7 @@ public class SceneManager : MonoBehaviour
         WrapperThrower.MaxDelay = night == 3 ? 7.0f : 4.0f;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
+            _transitioning = false;
             _pan.enabled = false;
             dumplings.SetActive(true);
             restaurant.SetActive(false);
@@ -82,6 +91,8 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("ToRestaurant")]
     public void ToRestaurant(int night)
     {
+        if (_transitioning) return;
+        _transitioning = true;
         // Disable all restaurant scenes before setting the new one up
         foreach(GameObject g in restaurantNights)
         {
@@ -91,6 +102,7 @@ public class SceneManager : MonoBehaviour
         Night = night;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
+            _transitioning = false;
             dumplings.SetActive(false);
             restaurant.SetActive(true);
             restaurantNights[Night - 1].SetActive(true);
@@ -106,8 +118,11 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("ToEpilogue")]
     public void ToEpilogue()
     {
+        if (_transitioning) return;
+        _transitioning = true;
         fade.DOFade(1, 1f).OnComplete(() =>
         {
+            _transitioning = false;
             _pan.enabled = false;
             dumplings.SetActive(false);
             restaurant.SetActive(false);
