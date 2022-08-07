@@ -19,7 +19,8 @@ public class SceneManager : MonoBehaviour
 
     [SerializeField] private int debugNight = 1;
     [SerializeField] private List<GameObject> restaurantNights = new List<GameObject>();
-
+    [SerializeField] private Transform tray, wrapperThrower, meatBucket;
+    
     private bool _transitioning;
     
     private void Start()
@@ -75,6 +76,13 @@ public class SceneManager : MonoBehaviour
         WrapperThrower.FaultyThrowChance = night == 3 ? 0.3f : 0;
         WrapperThrower.MinDelay = night == 3 ? 4.0f : 2.0f;
         WrapperThrower.MaxDelay = night == 3 ? 7.0f : 4.0f;
+
+        foreach (Transform t in wrapperThrower) Destroy(t.gameObject);
+        foreach (Transform t in meatBucket) Destroy(t.gameObject);
+        foreach (Transform t in tray) Destroy(t.GetComponent<DropTarget>().dropped);
+        WrapperThrower.SpawnedWrappers = 0;
+        Tray.PlacedDumplings = 0;
+
         fade.DOFade(1, 1f).OnComplete(() =>
         {
             _transitioning = false;

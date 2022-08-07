@@ -13,6 +13,7 @@ public class DragAndDrop : MonoBehaviour
     public static Action<DraggableType> OnPlaced;
 
     [SerializeField] private Transform target;
+    [SerializeField] private bool destructible;
     public DraggableType type;
     
     [ReadOnly] public Transform snapTarget;
@@ -23,6 +24,9 @@ public class DragAndDrop : MonoBehaviour
 
     private Vector2 MousePos => Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+    private const int XLimit = 80;
+    private const int YLimit = 45;
+    
     private void Awake()
     {
         _startScale = transform.localScale;
@@ -39,14 +43,10 @@ public class DragAndDrop : MonoBehaviour
     {
         if (!enabled) return;
 
-        if (Input.GetMouseButtonDown(0) && !snapTarget)
+        if (Input.GetMouseButtonDown(0) && !snapTarget && _collider.OverlapPoint(MousePos))
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (_collider.OverlapPoint(mousePosition))
-            {
-                isDragging = true;
-                transform.localScale = _startScale * 1.2f;
-            }
+            isDragging = true;
+            transform.localScale = _startScale * 1.2f;
         }
 
         if (Input.GetMouseButtonUp(0) && isDragging)
@@ -62,11 +62,17 @@ public class DragAndDrop : MonoBehaviour
                 OnPlaced?.Invoke(type);
                 if (type == DraggableType.MeatBall) Services.DialogueStarter.StartTutorialDialogue(2);
             }
+            else
+            {
+                if (destructible && (target.position.x is < -XLimit or > XLimit || target.position.y is < -YLimit or > YLimit)) Destroy(gameObject);
+            }
         }
         
         if (isDragging)
         {
-            target.position = MousePos;
+            target.position = destructible ? 
+                MousePos : 
+                new Vector2 (Mathf.Clamp(MousePos.x, -XLimit, XLimit), Mathf.Clamp(MousePos.y, -YLimit, YLimit));
         }
         else if (!snapTarget && Vector3.Distance(target.position, transform.position) > 0.5f)
         {

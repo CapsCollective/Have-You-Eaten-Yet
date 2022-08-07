@@ -469,6 +469,9 @@ MonoBehaviour:
   - {fileID: 1799052354}
   - {fileID: 1438228270}
   - {fileID: 934587405}
+  tray: {fileID: 1246725241}
+  wrapperThrower: {fileID: 1447343941}
+  meatBucket: {fileID: 2143745161}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,7 +1161,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: ToRestaurant
+        m_MethodName: ToDumplings
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1226,6 +1229,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3439984681548136743, guid: 38f99c9048146604b94c20533d84025d, type: 3}
   m_PrefabInstance: {fileID: 957513719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2143745161 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1620127900189209838, guid: 4bbadfd3850ace04d9965e709d976193, type: 3}
+  m_PrefabInstance: {fileID: 3439984681487268212}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3439984681487268212
 PrefabInstance:

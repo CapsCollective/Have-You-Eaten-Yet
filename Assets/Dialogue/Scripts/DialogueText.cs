@@ -11,7 +11,6 @@ public class DialogueText : MonoBehaviour
     [SerializeField] private Image boxImage;
     [SerializeField] private float fadeInTime = 1.0f;
     [SerializeField] private float sineStrength = 3.0f;
-    [SerializeField] private float sineFrequency = 1.0f;
     
     private const float DumplingFadeOutTime = 1.5f;
     private const float RestaurantFadeOutTime = 3.0f;

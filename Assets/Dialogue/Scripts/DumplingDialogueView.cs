@@ -10,7 +10,6 @@ public class DumplingDialogueView : DialogueViewBase
 
     [SerializeField] private SerializedDictionary<string, DialogueSettings> spawnPositions = new SerializedDictionary<string, DialogueSettings>();
     [SerializeField] private GameObject dialogueBoxPrefab;
-    [SerializeField] private Transform tray, wrapperThrower;
     
     private const float timeToWait = 1.0f;
     private float timePerCharacter = 0.03f;
@@ -106,11 +105,6 @@ public class DumplingDialogueView : DialogueViewBase
     {
         base.DialogueComplete();
         optionButtonCanvasGroup.interactable = false;
-        
-        foreach (Transform t in wrapperThrower) Destroy(t.gameObject);
-        foreach (Transform t in tray) Destroy(t.GetComponent<DropTarget>().dropped);
-        WrapperThrower.SpawnedWrappers = 0;
-        Tray.PlacedDumplings = 0;
         
         foreach (KeyValuePair<string, DialogueSettings> kvp in spawnPositions)
         {

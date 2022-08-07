@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 7835873070567948777}
+  destructible: 1
   type: 2
   snapTarget: {fileID: 0}
   isDragging: 0

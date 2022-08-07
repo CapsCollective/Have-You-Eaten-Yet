@@ -12,6 +12,7 @@ public class SpawnOnClick : MonoBehaviour
         if(!Active) return;
         
         GameObject instance = Instantiate(item, transform.position, item.transform.rotation);
+        instance.transform.SetParent(transform);
         instance.GetComponent<DragAndDrop>()?.Select(); // Init click if draggable component
 
         if (TutorialFlag) return;
