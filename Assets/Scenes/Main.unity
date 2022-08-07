@@ -207,9 +207,9 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &195273214 stripped
+--- !u!4 &186454227 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5001953820530006208, guid: 5272f437b95b9d142b647cc1a34f4f37, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2926260263012770632, guid: 5272f437b95b9d142b647cc1a34f4f37, type: 3}
   m_PrefabInstance: {fileID: 5001953820339271998}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &362399004
@@ -443,7 +443,7 @@ MonoBehaviour:
   speed: 30
   leftArrow: {fileID: 980560012}
   rightArrow: {fileID: 100637508}
-  kitchenBackground: {fileID: 195273214}
+  kitchenBackground: {fileID: 186454227}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0

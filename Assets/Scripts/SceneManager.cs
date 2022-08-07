@@ -83,7 +83,7 @@ public class SceneManager : MonoBehaviour
         WrapperThrower.SpawnedWrappers = 0;
         Tray.PlacedDumplings = 0;
 
-        fade.DOFade(1, 1f).OnComplete(() =>
+        fade.DOFade(1, 4f).OnComplete(() =>
         {
             _transitioning = false;
             _pan.enabled = false;
@@ -101,6 +101,9 @@ public class SceneManager : MonoBehaviour
     {
         if (_transitioning) return;
         _transitioning = true;
+        
+        NightSpriteToggle.OnSpriteToggle?.Invoke(true);
+        
         // Disable all restaurant scenes before setting the new one up
         foreach(GameObject g in restaurantNights)
         {

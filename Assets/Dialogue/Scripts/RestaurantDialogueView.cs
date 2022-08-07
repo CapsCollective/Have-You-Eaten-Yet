@@ -97,6 +97,7 @@ public class RestaurantDialogueView : DialogueViewBase
             {
                 OnNewRestaurantDialogue?.Invoke();
                 if (--ActiveDialogues > 0) return;
+                NightSpriteToggle.OnSpriteToggle?.Invoke(false);
                 if (SceneManager.Night == 3) Services.Scene.ToEpilogue();
                 else Services.Scene.ToDumplings(SceneManager.Night + 1);
             });
