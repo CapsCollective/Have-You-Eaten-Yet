@@ -1,19 +1,16 @@
 title: Night_1_Table_Conversation
 tags: 
 colorID: 0
-position: -832,-1196
+position: -833,-1197
 ---
 <<wait 2>>
 Ray: This place is just as good as I remembered it. 
 Donna: Have you been here before? 
-Ray: Yes, we have! Five years ago, your birthday. 
-Donna: I don’t remember.
+Ray: Yes, we have! Five years ago, your birthday.
 Ray: We sat at that table over there. I bought you a gold bracelet. 
 Donna: Is that so? I thought that night we went to a Mexican place. 
 Donna: Am I remembering wrong?
-Ray: Maybe it’s me.    
-Ray: That’s the way it goes, isn’t it? 
-Donna: Mmhmm. 
+Ray: Maybe it’s me. I wish I had a photo or something... 
 <<wait 2>>
 Ray: If only we could bookmark it. 
 Donna: What do you mean?
@@ -23,10 +20,8 @@ Ray: And years later, return to that moment, as if nothing has ever changed. Wou
 Donna: What kind of moment? 
 Ray: Anything. It could be as simple as us having dinner, right now. 
 Donna: There’s nothing special about that. 
-Ray: It doesn’t need to be special. 
-Ray: It just has to be a moment worth coming back to.
-Donna: Hmm. 
-Donna: Yeah. I would do it. 
+Ray: It doesn’t need to be special. It just has to be a moment worth coming back to.
+Donna: Hmm. ... Yeah. I would do it. 
 Ray: I would do it too. 
 Donna: It’s getting late. 
 Ray: Yeah. We should go.

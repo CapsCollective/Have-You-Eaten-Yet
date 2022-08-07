@@ -1,7 +1,7 @@
 title: Epilogue
 tags: 
 colorID: 0
-position: -731,-908
+position: -732,-909
 ---
 B: So yes. That was it. That was how things went.
 B: What did you think about your time here?
@@ -32,7 +32,6 @@ B: Is there anything you want to ask me?
     B: You shouldn’t have to worry about something like that.
     B: Or, perhaps, you would know the answer to that better than me.
     B: But if I had to give an honest answer…
-    [if there is a way to check how many dumplings the player made across their playtime]
         <<if $dumplingsMade > 50>> 
             B: You made many more than I would have expected.
         <<elseif $dumplingsMade > 25>>

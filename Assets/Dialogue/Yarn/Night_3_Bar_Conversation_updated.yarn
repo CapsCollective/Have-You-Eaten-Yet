@@ -1,14 +1,13 @@
 title: Night_3_Bar_Conversation
 tags: 
 colorID: 0
-position: -1134,-1978
+position: -1135,-1979
 ---
-<<wait 8>>
+<<wait 6>>
 Peng: Here’s a few containers of food. 
 Peng: Share them with the other staff. 
 Lila: It’s okay, you don’t have to - 
-Peng: No, I insist. We’re trying to use up everything tonight. 
-Peng: Otherwise it will all go to waste. 
+Peng: No, I insist. We’re trying to use up everything. Otherwise it will all go to waste. 
 Lila: Thank you. 
 Peng: Once we close up, let’s start packing the tables and chairs away. 
 Peng: Ah. You know it’s funny. It feels very ordinary, tonight. 
@@ -24,8 +23,7 @@ Lila: Are you sure you can handle it yourself?
 Peng: The storage facility closes at midnight, which gives us plenty of time. 
 Peng: Sorry that we’re keeping you back late. 
 Peng: You should take some more food! Bring some back to your family. 
-Lila: Actually… 
-Lila: It’s just myself, right now. 
+Lila: Actually… It’s just myself, right now. 
 Peng: Keep some in the freezer then! 
 Lila: No it’s really fine - but thank you though. 
 Lila: I’ll help you move some boxes down. It’s the least I can do. 
