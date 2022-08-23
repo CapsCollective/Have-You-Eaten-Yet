@@ -15,7 +15,6 @@ public class Tray : MonoBehaviour
    private void PlaceDumpling(DraggableType type)
    {
       if (type != DraggableType.Dumpling) return;
-      WrapperThrower.SpawnedWrappers--;
       if (++PlacedDumplings < 4) return;
       PlacedDumplings = 0;
       transform.DOMove(new Vector3(110, -12, 0), 1f).OnComplete(() =>

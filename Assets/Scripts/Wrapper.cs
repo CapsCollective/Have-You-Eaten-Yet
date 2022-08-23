@@ -81,7 +81,7 @@ public class Wrapper : MonoBehaviour
         if (!_tilted || _rightFolded) return;
         _rightFolded = true;
         _animator.Play(_leftFolded ? "Close Right" : "Fold Right");
-        if (_leftFolded) _dragAndDrop.enabled = true;
+        if (_leftFolded) Complete();
     }
     
     private void FoldLeft()
@@ -96,6 +96,7 @@ public class Wrapper : MonoBehaviour
     {
         Services.DialogueStarter.StartTutorialDialogue(4);
         _dragAndDrop.enabled = true;
+        WrapperThrower.SpawnedWrappers--;
         Services.DialogueStorage.SetValue("$dumplings_made", ++DumplingsMade);
     }
 }

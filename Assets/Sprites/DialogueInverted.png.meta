@@ -43,7 +43,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
-  spriteExtrude: 4
+  spriteExtrude: 2
   spriteMeshType: 0
   alignment: 9
   spritePivot: {x: 0.5, y: 0.375}

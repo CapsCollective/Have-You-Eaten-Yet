@@ -41,6 +41,11 @@ public class SceneManager : MonoBehaviour
         ToDumplings(debugNight);
     }
 
+    [Button]
+    public void DebugToMenu()
+    {
+        ToMenu(false);
+    }
 
     [YarnCommand("ToMenu")]
     public void ToMenu(bool closed)
